@@ -3,35 +3,59 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/fonts.css" />
+    <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="./css/style.css" />
     <title>Document</title>
   </head>
-  <body>
-    <div>
-      <header>
-        <a href="#">Logo</a>
-        <nav>
-          <ul>
-            <li>
-              <a href="#">О фильме</a>
+  <body class="page">
+    <header class="header">
+      <div class="container header__container">
+        <a class="logo header__logo" href="#">
+          <svg
+            class="logo__svg"
+            viewBox="0 0 128 79"
+            xmlns="http://www.w3.org/2000/svg"
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            stroke-linejoin="round"
+            stroke-miterlimit="1.414"
+          >
+            <path
+              d="M88.056 30.157L64 .88 39.98 30.113 64.046 51.03l24.01-20.873zm2.998 3.647L128 78.766H67.244V54.5l23.81-20.696zm-54.07-.045L0 78.764h60.756v-24.34L36.984 33.76zM69.61 55.8v20.663h53.167l-31.58-38.66L69.61 55.8z"
+            />
+          </svg>
+          <span class="logo__text">
+            <span>Cyberdyne</span>
+            <span>Systems</span>
+          </span>
+        </a>
+        <nav class="nav">
+          <ul class="nav__list list-reset">
+            <li class="nav__item">
+              <a class="nav__link" href="#plot">Сюжет</a>
             </li>
-            <li>
-              <a href="#">Галерея</a>
+            <li class="nav__item">
+              <a class="nav__link" href="#about">О фильме</a>
             </li>
-            <li>
-              <a href="#">Список игр</a>
+            <li class="nav__item">
+              <a class="nav__link" href="#gallery">Кадры</a>
+            </li>
+            <li class="nav__item">
+              <a class="nav__link" href="#cast">Актёры</a>
             </li>
           </ul>
         </nav>
-      </header>
-      <main class="main">
-        <section class="hero"></section>
-        <section class="about"></section>
-        <section class="gallery"></section>
-        <section class="games"></section>
-      </main>
-      <footer></footer>
-    </div>
+      </div>
+    </header>
+    <main class="main">
+      <section class="hero"></section>
+      <section class="plot" id="plot"></section>
+      <section class="about" id="about"></section>
+      <section class="gallery" id="gallery"></section>
+      <section class="cast" id="cast"></section>
+    </main>
+    <footer></footer>
     <script src="./js/script.js"></script>
   </body>
 </html>

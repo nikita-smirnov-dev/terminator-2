@@ -1,0 +1,38 @@
+@font-face {
+  font-family: 'terminator-two';
+  src: local('terminator-twoRegular'),
+    url('../fonts/terminator-two.woff2') format('woff2'),
+    url('../fonts/terminator-two.woff') format('woff');
+  font-display: swap;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: local('Inter-Regular'),
+    url('../fonts/Inter-Regular.woff') format('woff2'),
+    url('../fonts/Inter-Regular.woff') format('woff');
+  font-display: swap;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: local('InterBold'), url('../fonts/Inter-Bold.woff2') format('woff2'),
+    url('../fonts/Inter-Bold.woff') format('woff');
+  font-display: swap;
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: local('interSemiBold'),
+    url('../fonts/Inter-SemiBold.woff2') format('woff2'),
+    url('../fonts/Inter-SemiBold.woff') format('woff');
+  font-display: swap;
+  font-weight: 600;
+  font-style: normal;
+}
