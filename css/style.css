@@ -1,3 +1,10 @@
+:root {
+  --white-color: #ffffff;
+  --black-color: #333333;
+  --bg-color: #0b0d10;
+  --main-color: #e6e6e6;
+}
+
 html {
   box-sizing: border-box;
 }
@@ -30,12 +37,20 @@ img {
   background-color: transparent;
 }
 
+.section-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 32px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #dedacf;
+}
+
 .page {
   font-family: 'Inter', sans-serif;
   font-weight: 400;
   font-size: 16px;
-  background-color: #0b0d10;
-  color: #e6e6e6;
+  background-color: var(--bg-color);
+  color: var(--main-color);
 }
 
 .container {
@@ -43,6 +58,9 @@ img {
   margin: 0 auto;
   padding: 0 15px;
 }
+
+/* header
+============================================ */
 
 .header {
   padding: 16px 0;
@@ -100,11 +118,97 @@ img {
 .nav__link {
   font-size: 20px;
   letter-spacing: 1px;
-  color: #e6e6e6;
+  color: var(--main-color);
   opacity: 0.8;
   transition: opacity 0.3s ease-in-out;
 }
 
 .nav__link:hover {
   opacity: 1;
+}
+
+/* hero
+============================================ */
+
+.hero__container {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.hero__title {
+  margin: 0;
+  margin-bottom: 20px;
+  font-family: 'terminator-two', serif;
+  font-size: 48px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  text-align: left;
+  line-height: 1.2;
+  color: #dedacf;
+}
+
+.swiper {
+  width: 100%;
+  height: 70vh;
+  max-height: 800px;
+}
+
+.swiper-slide {
+  position: relative;
+  text-align: center;
+  font-size: 18px;
+  background: #444;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2));
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1);
+  transition: transform 6s ease-in-out;
+}
+
+.swiper-slide-active img {
+  transform: scale(1.06);
+}
+
+.swiper-text {
+  max-width: 520px;
+  width: 100%;
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+  right: 40px;
+  font-size: 26px;
+  text-shadow: 0 0 2px rgba(240, 39, 39, 0.25), 0 0 8px rgba(0, 0, 0, 0.8);
+  hyphens: auto;
+  line-height: 1.4;
+  color: rgba(230, 230, 230, 0.95);
+  text-align: left;
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.swiper-slide-active .swiper-text {
+  opacity: 1;
+}
+
+/* plot
+============================================ */
+
+.plot__title {
+  margin: 0;
+  margin-bottom: 20px;
 }
