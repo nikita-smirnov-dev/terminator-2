@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -9,6 +9,7 @@
       href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
     />
     <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/variables.css" />
     <link rel="stylesheet" href="./css/style.css" />
     <title>Document</title>
   </head>
@@ -40,6 +41,9 @@
               <a class="nav__link" href="#plot">Сюжет</a>
             </li>
             <li class="nav__item">
+              <a class="nav__link" href="#terminators">Терминаторы</a>
+            </li>
+            <li class="nav__item">
               <a class="nav__link" href="#about">О фильме</a>
             </li>
             <li class="nav__item">
@@ -59,31 +63,34 @@
           <div class="swiper">
             <div class="swiper-wrapper">
               <div class="swiper-slide swiper-1">
-                <img src="./img/slider/T-800.jpg" alt="T-800 Terminator" />
-                <p class="swiper-text">Hasta la vista baby</p>
+                <img src="./img/slider/T-800.jpg" alt="T-800 Терминатор" />
+                <p class="swiper-text">
+                  Теперь я знаю , почему вы плачете. Но это то, чего я никогда
+                  не смогу сделать
+                </p>
               </div>
               <div class="swiper-slide swiper-3">
-                <img src="./img/slider/sarah-connor.jpg" alt="Sarah Connor" />
+                <img src="./img/slider/sarah-connor.jpg" alt="Сара Коннор" />
                 <p class="swiper-text">
                   Нет судьбы, кроме той, что мы создаём сами
                 </p>
               </div>
               <div class="swiper-slide swiper-2">
-                <img src="./img/slider/T-1000.jpg" alt="T-1000 Terminator" />
+                <img src="./img/slider/T-1000.jpg" alt="T-1000 Терминатор" />
                 <p class="swiper-text">Вы видели этого мальчика?</p>
               </div>
               <div class="swiper-slide swiper-3">
-                <img src="./img/slider/john-connor.jpg" alt="John Connor" />
+                <img src="./img/slider/john-connor.jpg" alt="Джон Коннор" />
                 <p class="swiper-text">
                   Если машина может научиться ценить жизнь — значит, и мы можем
                 </p>
               </div>
               <div class="swiper-slide swiper-3">
-                <img src="./img/slider/doctor.jpg" alt="doctor Silderman" />
+                <img src="./img/slider/doctor.jpg" alt="доктор Сильверман" />
                 <p class="swiper-text">Мир сошёл с ума, если это — будущее</p>
               </div>
               <div class="swiper-slide swiper-3">
-                <img src="./img/slider/miles-dyson.jpg" alt="Miles Dyson" />
+                <img src="./img/slider/miles-dyson.jpg" alt="Майлз Дайсон" />
                 <p class="swiper-text">
                   Я не знал… Я не хотел, чтобы это произошло
                 </p>
@@ -91,7 +98,7 @@
               <div class="swiper-slide swiper-3">
                 <img
                   src="./img/slider/biker from the bar.jpg"
-                  alt="Biker from the bar"
+                  alt="Байкер у бара"
                 />
                 <p class="swiper-text">
                   Я не дам тебе угнать этот мотоцикл, сынок
@@ -104,9 +111,385 @@
       <section class="plot" id="plot">
         <div class="container plot__container">
           <h2 class="section-title plot__title">Сюжет</h2>
+          <div class="plot__content">
+            <img
+              class="plot__img"
+              src="./img/plot/judgment-day.jpg"
+              alt="Лос-Анджелес после судного дня"
+            />
+            <p class="section-text plot__text">
+              В&nbsp;1995 году Джон Коннор живёт в&nbsp;Лос-Анджелесе
+              с&nbsp;приёмными родителями. Его мать Сара Коннор с&nbsp;детства
+              готовила его к&nbsp;будущей роли лидера Сопротивления человечества
+              против Скайнета, искусственного интеллекта, который получит
+              контроль над ядерным потенциалом Соединенных Штатов и&nbsp;начнет
+              ядерную войну 29&nbsp;августа 1997&nbsp;года. Этот день будет
+              известен впоследствии как &laquo;Судный день&raquo;. Однако Сара
+              была арестована и&nbsp;заключена в&nbsp;психиатрическую больницу
+              за&nbsp;попытку взорвать компьютерную фабрику. Мир её&nbsp;сына
+              рухнул: Джон дерзит своим опекунам, убегает из&nbsp;дома
+              и&nbsp;прогуливает школу.
+            </p>
+          </div>
+          <div class="plot__content plot__content--side">
+            <img
+              class="plot__img"
+              src="./img/plot/model_101.jpg"
+              alt="Скайнет отправляет Терминатора"
+            />
+            <p class="section-text plot__text">
+              В&nbsp;2029 году Скайнет отправляет нового Терминатора
+              T-1000&nbsp;в прошлое, чтобы убить Джона. T-1000&nbsp;&mdash; это
+              более совершенная модель, изготовленная из&nbsp;жидкого металла
+              (&laquo;мимикрирующий полисплав&raquo;), который дает ему
+              возможность принимать форму и&nbsp;внешний вид практически всего,
+              к&nbsp;чему он&nbsp;прикасается, мгновенно заращивать раны
+              и&nbsp;превращать руки в&nbsp;оружие. T-1000 прибывает
+              в&nbsp;1995&nbsp;год, убивает патрульного полиции, завладевает его
+              оружием и&nbsp;принимает облик полицейского; он&nbsp;также
+              использует полицейский компьютер, чтобы выследить Джона.
+              В&nbsp;1995 году никто не&nbsp;сможет справиться с боевым роботом
+              такого уровня, но&nbsp;Джон Коннор из&nbsp;будущего послал
+              перепрограммированного терминатора Модели 101, чтобы защитить себя
+              в&nbsp;юности.
+            </p>
+          </div>
+          <div class="plot__content">
+            <img
+              class="plot__img"
+              src="./img/plot/truck.jpg"
+              alt="погоня за Джоном Коннором"
+            />
+            <p class="section-text plot__text">
+              Пути Т-800 и&nbsp;Т-1000 пересекаются в&nbsp;поисках Джона
+              в&nbsp;торговом центре. Рукопашная схватка роботов идёт
+              с&nbsp;преимуществом Т-1000, но Т-800&nbsp;с помощью мощного
+              огнестрельного оружия временно шокирует Т-1000, после чего
+              начинается погоня, и&nbsp;Джон с&nbsp;Т-800 вместе скрываются
+              на&nbsp;мотоцикле. Опасаясь, что Т-1000 убьет Сару, чтобы
+              добраться до&nbsp;него самого, Джон приказывает Терминатору помочь
+              освободить&nbsp;её, обнаружив, что Терминатор должен выполнять его
+              приказы.
+            </p>
+          </div>
+          <div class="plot__content plot__content--side">
+            <img
+              class="plot__img"
+              src="./img/plot/t-800_sarah_john.jpg"
+              alt="Спасение Сары Коннор из психиатрической больницы"
+            />
+            <p class="section-text plot__text">
+              Сара, узнав от&nbsp;врачей о&nbsp;появлении в&nbsp;городе
+              человека, похожего на Терминатора, планирует побег
+              из&nbsp;больницы. Т-1000 тоже появляется в психиатрической
+              клинике, где лежит Сара, убивает охранника и принимает его облик.
+              Тем временам Сара пытается бежать из&nbsp;клиники,
+              но&nbsp;на&nbsp;пути к&nbsp;побегу встречает Т-800 и&nbsp;Джона,
+              которые перехватывают её, после чего рассказывают правду
+              об&nbsp;истории Скайнета. Т-1000 преследует&nbsp;их,
+              но&nbsp;безуспешно, однако это убеждает Сару в необходимости
+              довериться Т-800. Сара, несмотря на&nbsp;свой страх перед роботом,
+              доверяет сыну, и&nbsp;следует за&nbsp;ним. Позже она узнает, что
+              человеком, непосредственно ответственным за&nbsp;создание
+              Скайнета, является Майлз Дайсон, инженер &laquo;Кибердайн
+              системс&raquo;, работающий над революционно новым
+              микропроцессором. Именно этот процессор станет потом основой для
+              Скайнета.
+            </p>
+          </div>
+          <div class="plot__content">
+            <img
+              class="plot__img"
+              src="./img/plot/cyberdyne.png"
+              alt="Верталет на фоне горящий фабрики"
+            />
+            <p class="section-text plot__text">
+              Сара, найдя приют у&nbsp;своего давнего друга, берёт у&nbsp;него
+              оружие, чтобы убить Дайсона и&nbsp;не&nbsp;допустить наступления
+              Судного дня. Джон приказывает роботу остановить&nbsp;её. Сара
+              ранит инженера, но оказывается не&nbsp;в&nbsp;состоянии убить
+              невинного человека на&nbsp;глазах его семьи. Появившиеся Джон
+              и&nbsp;Т-800 и&nbsp;рассказывают Дайсону о&nbsp;будущих
+              последствиях его работы. Они узнают, что большая часть его
+              исследований является результатом обратной разработки
+              повреждённого центрального процессора и&nbsp;правой руки
+              предыдущего Терминатора, который пытался убить Сару
+              в&nbsp;1984&nbsp;году. Убедив Дайсона, что проект должен быть
+              остановлен, они врываются в&nbsp;здание Кибердайн, забирают
+              процессор и&nbsp;манипулятор уничтоженного терминатора
+              и&nbsp;устанавливают взрывчатку, чтобы разрушить лабораторию
+              Дайсона. Прибывшие полицейские открывают стрельбу. Смертельно
+              раненный инженер из&nbsp;последних сил удерживает в&nbsp;руке
+              детонатор, давая друзьям и&nbsp;полицейским время уйти. Мощный
+              взрыв уничтожает лабораторию.Т-1000 неустанно преследует главных
+              героев, в&nbsp;конечном итоге загоняя их&nbsp;в&nbsp;угол
+              на&nbsp;металлургическом комбинате.
+            </p>
+          </div>
+          <div class="plot__content plot__content--side">
+            <img
+              class="plot__img"
+              src="./img/plot/john and terminators.jpg"
+              alt="Терминатор Сара и Джон"
+            />
+            <p class="section-text plot__text">
+              T-1000 и&nbsp;Т-800 опять сражаются, и&nbsp;более продвинутая
+              модель серьёзно повреждает и&nbsp;отключает Модель 101. Однако
+              Терминатор вновь включается, используя резервный источник питания,
+              застаёт противника врасплох и&nbsp;выстрелом гранатомёта
+              отправляет его в&nbsp;чан расплавленной стали. Т-1000 отчаянно
+              ищет форму, устойчивую при высоких температурах, но,
+              не&nbsp;найдя&nbsp;её, погибает. Джон бросает руку
+              и&nbsp;процессор оригинального Т-800&nbsp;в чан. Сара выражает
+              облегчение, что испытание закончено, но&nbsp;Терминатор объясняет,
+              что для исключения обратной разработки он&nbsp;сам тоже должен
+              быть уничтожен. Т-800 просит Сару помочь опустить его в&nbsp;чан
+              с&nbsp;расплавленной сталью, поскольку сам он&nbsp;не&nbsp;может
+              &laquo;самоуничтожиться&raquo;. Джон, которому робот заменил отца,
+              умоляет и&nbsp;приказывает Терминатору пересмотреть своё решение.
+              Однако робот, имея в&nbsp;виду выживание человечества,
+              отказывается подчиняться. Он&nbsp;прощается с&nbsp;людьми,
+              обнимает плачущего Джона, а&nbsp;затем опускается в&nbsp;чан,
+              поднимая вверх большой палец правой руки. Джон и&nbsp;Сара едут
+              по&nbsp;шоссе, и&nbsp;голос Сары говорит за&nbsp;кадром:
+              &laquo;Неизвестное будущее приближается. Я&nbsp;впервые иду
+              навстречу ему с&nbsp;чувством надежды. Если машина, Терминатор,
+              может понять ценность человеческой жизни, возможно, мы&nbsp;тоже
+              сможем&raquo;.
+            </p>
+          </div>
         </div>
       </section>
-      <section class="about" id="about"></section>
+      <section class="terminators" id="terminators">
+        <div class="container terminators__conteiner">
+          <h2 class="section-title terminators__title">Терминаторы</h2>
+          <p class="section-text terminators__text">
+            Выберите модель для просмотра информации
+          </p>
+          <div class="terminators__tabs">
+            <button class="terminator__tab btn-reset" id="t-800">
+              T-800 / Model 101
+            </button>
+            <button class="terminator__tab btn-reset" id="t-1000">
+              Cyberdyne Systems Series 1000 (T-1000)
+            </button>
+          </div>
+
+          <div class="terminators__block">
+            <div
+              class="terminator__info terminator__info--t800 is-active"
+              data-model="t800"
+            >
+              <div class="spec spec--t800">
+                <h4 class="spec__title">Тип</h4>
+                <ul class="spec__list list-reset">
+                  <li class="spec__item">Инфильтрационный киборг</li>
+                </ul>
+                <h4 class="spec__title">Назначение</h4>
+                <ul class="spec__list list-reset">
+                  <li class="spec__item">Устранение целей</li>
+                  <li class="spec__item">Защита приоритетных объектов</li>
+                  <li class="spec__item">Проникновение в человеческую среду</li>
+                </ul>
+                <h4 class="spec__title">Конструкция</h4>
+                <ul class="spec__list list-reset">
+                  <li class="spec__item">
+                    <strong>Эндоскелет:</strong> Титан-танталовый сплав
+                  </li>
+                  <li class="spec__item">
+                    <strong>Покрытие:</strong> живая органическая ткань
+                  </li>
+                  <li class="spec__item">
+                    <strong>Зрение:</strong> инфракрасное + тактический HUD
+                  </li>
+                  <li class="spec__item">
+                    <strong>Источник питания:</strong> компактный ядерный
+                    элемент
+                  </li>
+                  <li class="spec__item">
+                    <strong>Система обучения:</strong> ограниченная (в фильме —
+                    разблокирована)
+                  </li>
+                </ul>
+                <h4 class="spec__title">Физические характеристики</h4>
+                <ul class="spec__list list-reset">
+                  <li class="spec__item">
+                    <strong>Сила:</strong> значительно превосходит человека
+                  </li>
+                  <li class="spec__item">
+                    <strong>Выносливость:</strong> не ощущает боли
+                  </li>
+                  <li class="spec__item">
+                    <strong>Реакция:</strong> машинная, мгновенная
+                  </li>
+                  <li class="spec__item">
+                    <strong>Регенерация:</strong> ремонт эндоскелета возможен до
+                    критических повреждений
+                  </li>
+                </ul>
+
+                <h4 class="spec__title">Вооружение</h4>
+                <ul class="spec__list list-reset">
+                  <li class="spec__item">Использует любое доступное оружие</li>
+                  <li class="spec__item">
+                    Способен применять транспорт и тяжёлую технику
+                  </li>
+                  <li class="spec__item">
+                    <strong>Предпочтение:</strong> огнестрельное оружие крупного
+                    калибра
+                  </li>
+                </ul>
+
+                <h4 class="spec__title">Поведенческие особенности</h4>
+                <ul class="spec__list list-reset">
+                  <li class="spec__item">Холодная логика</li>
+                  <li class="spec__item">Отсутствие эмоций (изначально)</li>
+                  <li class="spec__item">
+                    Способен обучаться и перенимать человеческие модели
+                    поведения
+                  </li>
+                  <li class="spec__item">
+                    Строгое следование приказам приоритетной цели
+                  </li>
+                </ul>
+
+                <h4 class="spec__title">Статус в фильме</h4>
+                <ul class="spec__list list-reset">
+                  <li class="spec__item">
+                    Перепрограммирован для защиты Джона Коннора
+                  </li>
+                  <li class="spec__item">
+                    Проявляет зачатки понимания человеческой ценности жизни
+                  </li>
+                </ul>
+              </div>
+              <div class="terminator__images">
+                <img
+                  class="terminator__unit terminator__unit--left"
+                  src="./img/terminators/t-800.png"
+                  alt="Терминатор Т-800"
+                />
+              </div>
+            </div>
+
+            <div
+              class="terminator__info terminator__info--t1000"
+              data-model="t1000"
+            >
+              <div class="spec spec--t1000">
+                <h4 class="spec__title">Тип</h4>
+                <ul class="spec__list list-reset">
+                  <li class="spec__item">
+                    Экспериментальный терминатор нового поколения (мимикрирующий
+                    полисплав — жидкий металл)
+                  </li>
+                </ul>
+                <h4 class="spec__title">Назначение</h4>
+                <ul class="spec__list list-reset">
+                  <li class="spec__item">Устранение приоритетных целей</li>
+                  <li class="spec__item">
+                    Поиск и ликвидация лидеров Сопротивления
+                  </li>
+                  <li class="spec__item">
+                    Инфильтрация без необходимости маскировки органической
+                    тканью
+                  </li>
+                </ul>
+                <h4 class="spec__title">Конструкция</h4>
+                <ul class="spec__list list-reset">
+                  <li class="spec__item">
+                    Материал корпуса: мимикрирующий полисплав (жидкий металл)
+                  </li>
+                  <li class="spec__item">
+                    <strong>Эндоскелет:</strong> отсутствует
+                    (цельнометаллическая структура)
+                  </li>
+                  <li class="spec__item">
+                    <strong>Мимикрия:</strong> способен копировать внешний вид,
+                    голос и поведение объектов
+                  </li>
+                  <li class="spec__item">
+                    <strong>Зрение:</strong> многоспектральное, с расширенной
+                    аналитикой
+                  </li>
+                  <li class="spec__item">
+                    <strong>Источник питания:</strong> неизвестен / интегрирован
+                    в структуру
+                  </li>
+                  <li class="spec__item">
+                    <strong>Система обучения:</strong> продвинутая, автономная
+                  </li>
+                </ul>
+                <h4 class="spec__title">Физические характеристики</h4>
+                <ul class="spec__list list-reset">
+                  <li class="spec__item">
+                    <strong>Сила:</strong> превосходит T-800 в ближнем бою
+                  </li>
+                  <li class="spec__item">
+                    <strong>Выносливость:</strong> практически неуязвим для
+                    обычного оружия
+                  </li>
+                  <li class="spec__item">
+                    <strong>Реакция:</strong> сверхбыстрая, адаптивная
+                  </li>
+                  <li class="spec__item">
+                    <strong>Регенерация:</strong> мгновенная самовосстановление
+                    при некритических повреждениях
+                  </li>
+                </ul>
+
+                <h4 class="spec__title">Вооружение</h4>
+                <ul class="spec__list list-reset">
+                  <li class="spec__item">
+                    Формирует холодное оружие из собственного тела (клинки,
+                    крюки, копья)
+                  </li>
+                  <li class="spec__item">
+                    Использует огнестрельное оружие без ограничений
+                  </li>
+                  <li class="spec__item">
+                    Может превращать конечности в ударные инструменты
+                  </li>
+                </ul>
+
+                <h4 class="spec__title">Поведенческие особенности</h4>
+                <ul class="spec__list list-reset">
+                  <li class="spec__item">Абсолютно холодный расчёт</li>
+                  <li class="spec__item">
+                    Отсутствие эмпатии и эмоциональных реакций
+                  </li>
+                  <li class="spec__item">Высокая степень автономности</li>
+                  <li class="spec__item">
+                    Адаптация поведения под среду и жертву
+                  </li>
+                  <li class="spec__item">
+                    Не способен к пониманию человеческих ценностей
+                  </li>
+                </ul>
+
+                <h4 class="spec__title">Статус в фильме</h4>
+                <ul class="spec__list list-reset">
+                  <li class="spec__item">Основной антагонист</li>
+                  <li class="spec__item">Не подлежит перепрограммированию</li>
+                  <li class="spec__item">Уничтожен в расплавленной стали</li>
+                </ul>
+              </div>
+              <div class="terminator__images">
+                <img
+                  class="terminator__unit terminator__unit--right"
+                  src="./img/terminators/t-1000.png"
+                  alt="Терминатор Т-1000"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="about" id="about">
+        <div class="container about__container">
+          <h2 class="section-title about__title">О фильме</h2>
+        </div>
+      </section>
       <section class="gallery" id="gallery"></section>
       <section class="cast" id="cast"></section>
     </main>
