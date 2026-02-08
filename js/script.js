@@ -113,10 +113,12 @@ observer.observe(aboutSection);
 
 const playBtn = document.querySelectorAll('.soundtrack__btn');
 
-function formatTime(time) {
+function formatTime(time = 0) {
+  if (!Number.isFinite(time)) return '0:00';
+
   const minutes = Math.floor(time / 60);
   const seconds = Math.floor(time % 60);
-  return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+  return `${minutes}:${seconds.toString().padStart(2, '0')}`;
 }
 
 playBtn.forEach((item) => {
@@ -127,12 +129,14 @@ playBtn.forEach((item) => {
   const timeline = currentItem.querySelector('.soundtrack__timeline');
 
   currentAudio.addEventListener('loadedmetadata', () => {
-    timeline.textContent = formatTime(currentAudio.duration);
+    if (currentAudio.duration) {
+      timeline.textContent = formatTime(currentAudio.duration);
+    } else {
+      timeline.textContent = '0:00';
+    }
   });
 
   currentAudio.addEventListener('timeupdate', () => {
-    if (!currentItem.classList.contains('is-playnig')) return;
-
     const progressPercent =
       (currentAudio.currentTime / currentAudio.duration) * 100;
 
@@ -142,6 +146,8 @@ playBtn.forEach((item) => {
   });
 
   progressContainer.addEventListener('click', (e) => {
+    if (!currentAudio.duration) return;
+
     const rect = e.currentTarget.getBoundingClientRect();
     const clickX = e.clientX - rect.left;
     const width = rect.width;
@@ -156,7 +162,10 @@ playBtn.forEach((item) => {
       currentAudio.pause();
     } else {
       document.querySelectorAll('.soundtrack__player').forEach((el) => {
+        if (el === currentItem) return;
+
         el.classList.remove('is-playnig');
+
         const audio = el.querySelector('.soundtrack__song');
         const progress = el.querySelector('.soundtrack__progress-bar');
         const timeline = el.querySelector('.soundtrack__timeline');
@@ -168,5 +177,11 @@ playBtn.forEach((item) => {
       currentItem.classList.add('is-playnig');
       currentAudio.play();
     }
+  });
+
+  currentAudio.addEventListener('ended', () => {
+    currentItem.classList.remove('is-playnig');
+    progress.style.width = '0%';
+    timeline.textContent = formatTime(currentAudio.duration);
   });
 });
