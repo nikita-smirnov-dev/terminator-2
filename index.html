@@ -47,7 +47,7 @@
               <a class="nav__link" href="#about">О фильме</a>
             </li>
             <li class="nav__item">
-              <a class="nav__link" href="#filming">Съёмочный процесс</a>
+              <a class="nav__link" href="#soundtracks">Саундтреки</a>
             </li>
             <li class="nav__item">
               <a class="nav__link" href="#cast">Актёры</a>
@@ -663,9 +663,432 @@
           </div>
         </div>
       </section>
-      <section class="filming" id="filming">
-        <div class="container filming__container">
-          <h2 class="filming__title section-title">СЪёмочный процесс</h2>
+      <section class="soundtracks" id="soundtracks">
+        <div class="container soundtracks__container">
+          <h2 class="soundtracks__title section-title">Саундтреки</h2>
+          <p class="soundtracks__text section-text">
+            Музыка Terminator 2 стала частью визуального языка фильма.
+            Индустриальные ритмы и холодные синтезаторы усиливают ощущение
+            неизбежности.
+          </p>
+          <div class="soundtracks__block">
+            <ul class="soundtracks__list list-reset">
+              <li class="soundtrack">
+                <div class="soundtrack__descr">
+                  <h3 class="soundtrack__title">Track_01 - Main Theme</h3>
+
+                  <div class="soundtrack__info">
+                    <p class="soundtrack__info-content">
+                      <span class="soundtrack__info-text">Композитор: </span
+                      >Brad Fiedel
+                    </p>
+                    <p class="soundtrack__info-content">
+                      <span class="soundtrack__info-text">Год: </span>1991
+                    </p>
+                    <p class="soundtrack__info-content">
+                      <span class="soundtrack__info-text">Жанр: </span
+                      >Industrial / Synth
+                    </p>
+                    <p class="soundtrack__info-content">
+                      <span class="soundtrack__info-text">Контекст: </span
+                      >Вступительные титры
+                    </p>
+                  </div>
+                </div>
+                <div class="soundtrack__player">
+                  <audio
+                    class="soundtrack__song"
+                    src="./music/Brad_Fiedel_-_main_theme.mp3"
+                    type="audio/mpeg"
+                  ></audio>
+                  <div class="soundtrack__controls">
+                    <button class="soundtrack__btn btn-reset">
+                      <svg
+                        class="soundtrack__icon icon-play"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 640 640"
+                      >
+                        <path
+                          d="M187.2 100.9C174.8 94.1 159.8 94.4 147.6 101.6C135.4 108.8 128 121.9 128 136L128 504C128 518.1 135.5 531.2 147.6 538.4C159.7 545.6 174.8 545.9 187.2 539.1L523.2 355.1C536 348.1 544 334.6 544 320C544 305.4 536 291.9 523.2 284.9L187.2 100.9z"
+                        />
+                      </svg>
+
+                      <svg
+                        class="soundtrack__icon icon-pause"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 384 512"
+                      >
+                        <path
+                          d="M48 32C21.5 32 0 53.5 0 80L0 432c0 26.5 21.5 48 48 48l64 0c26.5 0 48-21.5 48-48l0-352c0-26.5-21.5-48-48-48L48 32zm224 0c-26.5 0-48 21.5-48 48l0 352c0 26.5 21.5 48 48 48l64 0c26.5 0 48-21.5 48-48l0-352c0-26.5-21.5-48-48-48l-64 0z"
+                        />
+                      </svg>
+                    </button>
+                    <div class="soundtrack__progress">
+                      <div class="soundtrack__progress-bar"></div>
+                    </div>
+                    <span class="soundtrack__timeline">0 : 00</span>
+                    <div class="tooltip-wrapper">
+                      <div class="tooltip">
+                        <div class="marker" tabindex="0">
+                          <span class="dot"></span>
+                        </div>
+                        <div class="popup">
+                          <strong>СИСТЕМНОЕ ПРИМЕЧАНИЕ</strong><br />
+                          Оснавная тема фильма. Металлический ритм стал символом
+                          всей франшизы
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="soundtrack">
+                <div class="soundtrack__descr">
+                  <h3 class="soundtrack__title">
+                    Track_02 - Guitars & Cadillacs
+                  </h3>
+                  <h3 class="soundtrack__title"></h3>
+                  <div class="soundtrack__info">
+                    <p class="soundtrack__info-content">
+                      <span class="soundtrack__info-text">Композитор: </span
+                      >Brad Fiedel
+                    </p>
+                    <p class="soundtrack__info-content">
+                      <span class="soundtrack__info-text">Год: </span>1991
+                    </p>
+                    <p class="soundtrack__info-content">
+                      <span class="soundtrack__info-text">Жанр: </span>Rock /
+                      Score
+                    </p>
+                    <p class="soundtrack__info-content">
+                      <span class="soundtrack__info-text">Контекст: </span
+                      >Проишествие в баре
+                    </p>
+                  </div>
+                </div>
+                <div class="soundtrack__player">
+                  <audio
+                    class="soundtrack__song"
+                    src="./music/Dwight_Yoakam_-_Guitars_Cadillacs.mp3"
+                    type="audio/mpeg"
+                  ></audio>
+                  <div class="soundtrack__controls">
+                    <button class="soundtrack__btn btn-reset">
+                      <svg
+                        class="soundtrack__icon icon-play"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 640 640"
+                      >
+                        <path
+                          d="M187.2 100.9C174.8 94.1 159.8 94.4 147.6 101.6C135.4 108.8 128 121.9 128 136L128 504C128 518.1 135.5 531.2 147.6 538.4C159.7 545.6 174.8 545.9 187.2 539.1L523.2 355.1C536 348.1 544 334.6 544 320C544 305.4 536 291.9 523.2 284.9L187.2 100.9z"
+                        />
+                      </svg>
+
+                      <svg
+                        class="soundtrack__icon icon-pause"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 384 512"
+                      >
+                        <path
+                          d="M48 32C21.5 32 0 53.5 0 80L0 432c0 26.5 21.5 48 48 48l64 0c26.5 0 48-21.5 48-48l0-352c0-26.5-21.5-48-48-48L48 32zm224 0c-26.5 0-48 21.5-48 48l0 352c0 26.5 21.5 48 48 48l64 0c26.5 0 48-21.5 48-48l0-352c0-26.5-21.5-48-48-48l-64 0z"
+                        />
+                      </svg>
+                    </button>
+                    <div class="soundtrack__progress">
+                      <div class="soundtrack__progress-bar"></div>
+                    </div>
+                    <span class="soundtrack__timeline">0 : 00</span>
+                    <div class="tooltip-wrapper">
+                      <div class="tooltip">
+                        <div class="marker" tabindex="0">
+                          <span class="dot"></span>
+                        </div>
+                        <div class="popup">
+                          <strong>СИСТЕМНОЕ ПРИМЕЧАНИЕ</strong><br />
+                          Редкий для фильма гитарный трек, добавляющий ощущения
+                          движиения и свободы
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="soundtrack">
+                <div class="soundtrack__descr">
+                  <h3 class="soundtrack__title">Track_03 - Bad to the bone</h3>
+                  <div class="soundtrack__info">
+                    <p class="soundtrack__info-content">
+                      <span class="soundtrack__info-text">Aртист: </span>George
+                      Thorogood & The Destroyers
+                    </p>
+                    <p class="soundtrack__info-content">
+                      <span class="soundtrack__info-text">Год: </span>1982
+                    </p>
+                    <p class="soundtrack__info-content">
+                      <span class="soundtrack__info-text">Жанр: </span>Blues
+                      Rock
+                    </p>
+                    <p class="soundtrack__info-content">
+                      <span class="soundtrack__info-text">Контекст: </span>T-800
+                      выход из бара
+                    </p>
+                  </div>
+                </div>
+                <div class="soundtrack__player">
+                  <audio
+                    class="soundtrack__song"
+                    src="./music/George_Thorogood_-_Bad_To_The_Bone.mp3"
+                    type="audio/mpeg"
+                  ></audio>
+                  <div class="soundtrack__controls">
+                    <button class="soundtrack__btn btn-reset">
+                      <svg
+                        class="soundtrack__icon icon-play"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 640 640"
+                      >
+                        <path
+                          d="M187.2 100.9C174.8 94.1 159.8 94.4 147.6 101.6C135.4 108.8 128 121.9 128 136L128 504C128 518.1 135.5 531.2 147.6 538.4C159.7 545.6 174.8 545.9 187.2 539.1L523.2 355.1C536 348.1 544 334.6 544 320C544 305.4 536 291.9 523.2 284.9L187.2 100.9z"
+                        />
+                      </svg>
+
+                      <svg
+                        class="soundtrack__icon icon-pause"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 384 512"
+                      >
+                        <path
+                          d="M48 32C21.5 32 0 53.5 0 80L0 432c0 26.5 21.5 48 48 48l64 0c26.5 0 48-21.5 48-48l0-352c0-26.5-21.5-48-48-48L48 32zm224 0c-26.5 0-48 21.5-48 48l0 352c0 26.5 21.5 48 48 48l64 0c26.5 0 48-21.5 48-48l0-352c0-26.5-21.5-48-48-48l-64 0z"
+                        />
+                      </svg>
+                    </button>
+                    <div class="soundtrack__progress">
+                      <div class="soundtrack__progress-bar"></div>
+                    </div>
+                    <span class="soundtrack__timeline">0 : 00</span>
+                    <div class="tooltip-wrapper">
+                      <div class="tooltip">
+                        <div class="marker" tabindex="0">
+                          <span class="dot"></span>
+                        </div>
+                        <div class="popup">
+                          <strong>СИСТЕМНОЕ ПРИМЕЧАНИЕ</strong><br />
+                          Ироничный контраст: харизма терминатора под
+                          классический рок-хит
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="soundtrack">
+                <div class="soundtrack__descr">
+                  <h3 class="soundtrack__title">
+                    Track_04 - You Could Be Mine
+                  </h3>
+                  <div class="soundtrack__info">
+                    <p class="soundtrack__info-content">
+                      <span class="soundtrack__info-text">Aртист: </span>Guns N'
+                      Roses
+                    </p>
+                    <p class="soundtrack__info-content">
+                      <span class="soundtrack__info-text">Год: </span>1991
+                    </p>
+                    <p class="soundtrack__info-content">
+                      <span class="soundtrack__info-text">Жанр: </span>Hard Rock
+                    </p>
+                    <p class="soundtrack__info-content">
+                      <span class="soundtrack__info-text">Контекст: </span>Сцена
+                      погони
+                    </p>
+                  </div>
+                </div>
+                <div class="soundtrack__player">
+                  <audio
+                    class="soundtrack__song"
+                    src="./music/Guns_N_Roses_-_You_Could_Be_Mine.mp3"
+                    type="audio/mpeg"
+                  ></audio>
+                  <div class="soundtrack__controls">
+                    <button class="soundtrack__btn btn-reset">
+                      <svg
+                        class="soundtrack__icon icon-play"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 640 640"
+                      >
+                        <path
+                          d="M187.2 100.9C174.8 94.1 159.8 94.4 147.6 101.6C135.4 108.8 128 121.9 128 136L128 504C128 518.1 135.5 531.2 147.6 538.4C159.7 545.6 174.8 545.9 187.2 539.1L523.2 355.1C536 348.1 544 334.6 544 320C544 305.4 536 291.9 523.2 284.9L187.2 100.9z"
+                        />
+                      </svg>
+
+                      <svg
+                        class="soundtrack__icon icon-pause"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 384 512"
+                      >
+                        <path
+                          d="M48 32C21.5 32 0 53.5 0 80L0 432c0 26.5 21.5 48 48 48l64 0c26.5 0 48-21.5 48-48l0-352c0-26.5-21.5-48-48-48L48 32zm224 0c-26.5 0-48 21.5-48 48l0 352c0 26.5 21.5 48 48 48l64 0c26.5 0 48-21.5 48-48l0-352c0-26.5-21.5-48-48-48l-64 0z"
+                        />
+                      </svg>
+                    </button>
+                    <div class="soundtrack__progress">
+                      <div class="soundtrack__progress-bar"></div>
+                    </div>
+                    <span class="soundtrack__timeline">0 : 00</span>
+                    <div class="tooltip-wrapper">
+                      <div class="tooltip">
+                        <div class="marker" tabindex="0">
+                          <span class="dot"></span>
+                        </div>
+                        <div class="popup">
+                          <strong>СИСТЕМНОЕ ПРИМЕЧАНИЕ</strong><br />
+                          Энергичный трек, усиливающий хфщс и темп сцен погони
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="soundtrack">
+                <div class="soundtrack__descr">
+                  <h3 class="soundtrack__title">
+                    Track_05 - Sarah Connor's Dream
+                  </h3>
+                  <div class="soundtrack__info">
+                    <p class="soundtrack__info-content">
+                      <span class="soundtrack__info-text">Композитор: </span
+                      >Brad Fiedel
+                    </p>
+                    <p class="soundtrack__info-content">
+                      <span class="soundtrack__info-text">Год: </span>1991
+                    </p>
+                    <p class="soundtrack__info-content">
+                      <span class="soundtrack__info-text">Жанр: </span>Ambient /
+                      synth
+                    </p>
+                    <p class="soundtrack__info-content">
+                      <span class="soundtrack__info-text">Контекст: </span>Сцены
+                      снов Сары Коннор
+                    </p>
+                  </div>
+                </div>
+                <div class="soundtrack__player">
+                  <audio
+                    class="soundtrack__song"
+                    src="./music/Sarah Connor's Dream.mp3"
+                    type="audio/mpeg"
+                  ></audio>
+                  <div class="soundtrack__controls">
+                    <button class="soundtrack__btn btn-reset">
+                      <svg
+                        class="soundtrack__icon icon-play"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 640 640"
+                      >
+                        <path
+                          d="M187.2 100.9C174.8 94.1 159.8 94.4 147.6 101.6C135.4 108.8 128 121.9 128 136L128 504C128 518.1 135.5 531.2 147.6 538.4C159.7 545.6 174.8 545.9 187.2 539.1L523.2 355.1C536 348.1 544 334.6 544 320C544 305.4 536 291.9 523.2 284.9L187.2 100.9z"
+                        />
+                      </svg>
+
+                      <svg
+                        class="soundtrack__icon icon-pause"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 384 512"
+                      >
+                        <path
+                          d="M48 32C21.5 32 0 53.5 0 80L0 432c0 26.5 21.5 48 48 48l64 0c26.5 0 48-21.5 48-48l0-352c0-26.5-21.5-48-48-48L48 32zm224 0c-26.5 0-48 21.5-48 48l0 352c0 26.5 21.5 48 48 48l64 0c26.5 0 48-21.5 48-48l0-352c0-26.5-21.5-48-48-48l-64 0z"
+                        />
+                      </svg>
+                    </button>
+                    <div class="soundtrack__progress">
+                      <div class="soundtrack__progress-bar"></div>
+                    </div>
+                    <span class="soundtrack__timeline">0 : 00</span>
+                    <div class="tooltip-wrapper">
+                      <div class="tooltip">
+                        <div class="marker" tabindex="0">
+                          <span class="dot"></span>
+                        </div>
+                        <div class="popup">
+                          <strong>СИСТЕМНОЕ ПРИМЕЧАНИЕ</strong><br />
+                          Атмосферный трек, отражающий внутренние страхи и
+                          напряжения Сары Коннор
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="soundtrack">
+                <div class="soundtrack__descr">
+                  <h3 class="soundtrack__title">Track_06 - Its over goodbye</h3>
+                  <div class="soundtrack__info">
+                    <p class="soundtrack__info-content">
+                      <span class="soundtrack__info-text">Композитор: </span
+                      >Brad Fiedel
+                    </p>
+                    <p class="soundtrack__info-content">
+                      <span class="soundtrack__info-text">Год: </span>1991
+                    </p>
+                    <p class="soundtrack__info-content">
+                      <span class="soundtrack__info-text">Жанр: </span>Ambient /
+                      Emotional synth
+                    </p>
+                    <p class="soundtrack__info-content">
+                      <span class="soundtrack__info-text">Контекст: </span
+                      >Финальная сцена
+                    </p>
+                  </div>
+                </div>
+                <div class="soundtrack__player">
+                  <audio
+                    class="soundtrack__song"
+                    src="./music/Brad_Fiedel_-_Its_over_goodbye.mp3"
+                    type="audio/mpeg"
+                  ></audio>
+                  <div class="soundtrack__controls">
+                    <button class="soundtrack__btn btn-reset">
+                      <svg
+                        class="soundtrack__icon icon-play"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 640 640"
+                      >
+                        <path
+                          d="M187.2 100.9C174.8 94.1 159.8 94.4 147.6 101.6C135.4 108.8 128 121.9 128 136L128 504C128 518.1 135.5 531.2 147.6 538.4C159.7 545.6 174.8 545.9 187.2 539.1L523.2 355.1C536 348.1 544 334.6 544 320C544 305.4 536 291.9 523.2 284.9L187.2 100.9z"
+                        />
+                      </svg>
+
+                      <svg
+                        class="soundtrack__icon icon-pause"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 384 512"
+                      >
+                        <path
+                          d="M48 32C21.5 32 0 53.5 0 80L0 432c0 26.5 21.5 48 48 48l64 0c26.5 0 48-21.5 48-48l0-352c0-26.5-21.5-48-48-48L48 32zm224 0c-26.5 0-48 21.5-48 48l0 352c0 26.5 21.5 48 48 48l64 0c26.5 0 48-21.5 48-48l0-352c0-26.5-21.5-48-48-48l-64 0z"
+                        />
+                      </svg>
+                    </button>
+                    <div class="soundtrack__progress">
+                      <div class="soundtrack__progress-bar"></div>
+                    </div>
+                    <span class="soundtrack__timeline">0 : 00</span>
+                    <div class="tooltip-wrapper">
+                      <div class="tooltip">
+                        <div class="marker" tabindex="0">
+                          <span class="dot"></span>
+                        </div>
+                        <div class="popup">
+                          <strong>СИСТЕМНОЕ ПРИМЕЧАНИЕ</strong><br />
+                          Меланхоличное завершение истории, подчеркивающее
+                          жертву Терминатора
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
         </div>
       </section>
       <section class="cast" id="cast"></section>
