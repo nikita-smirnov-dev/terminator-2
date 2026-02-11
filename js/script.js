@@ -1,4 +1,4 @@
-const swiper = new Swiper('.swiper', {
+const swiper = new Swiper('.swiper-hero', {
   slidesPerView: 1,
   loop: true,
   speed: 1000,
@@ -184,4 +184,101 @@ playBtn.forEach((item) => {
     progress.style.width = '0%';
     timeline.textContent = formatTime(currentAudio.duration);
   });
+});
+
+const actors = [
+  {
+    src: 'img/cast/Arnold_Schwarzenegger.jpg',
+    actor: 'Арнольд Шварценеггер',
+    role: 'терминатор Т-800',
+  },
+  {
+    src: 'img/cast/Linda_Hamilton.jpg',
+    actor: 'Линда Хэмилтон',
+    role: 'Сара Коннор',
+  },
+  {
+    src: 'img/cast/Edward_Furlong.jpg',
+    actor: 'Эдвард Ферлонг',
+    role: 'Джон Коннор',
+  },
+  {
+    src: 'img/cast/Robert_Patrick.jpg',
+    actor: 'Роберт Патрик',
+    role: 'терминатор Т-1000',
+  },
+  {
+    src: 'img/cast/Earl_Boen.jpg',
+    actor: 'Эрл Боэн',
+    role: 'Доктор Зильберман',
+  },
+  {
+    src: 'img/cast/Joe_Morton.jpg',
+    actor: 'Джо Мортон',
+    role: 'Майлз Дайсон',
+  },
+  {
+    src: 'img/cast/Lesly_Hamilton.jpg',
+    actor: 'Лесли Хэмилтон',
+    role: 'Twin Sarah',
+  },
+  {
+    src: 'img/cast/Alexander_Berkeley.jpg',
+    actor: 'Ксандер Беркли',
+    role: 'Тодд Войт',
+  },
+  {
+    src: 'img/cast/Jenette_Goldstein.jpg',
+    actor: 'Дженетт Голдстин',
+    role: 'Джанель Войт',
+  },
+  {
+    src: 'img/cast/Daniel_Cooksey.jpg',
+    actor: 'Дэнни Кукси',
+    role: 'Тим',
+  },
+  {
+    src: 'img/cast/Dan_Stanton.jpg',
+    actor: 'Дэн Стэнтон',
+    role: 'Lewis as T-1000',
+  },
+  {
+    src: 'img/cast/Don_Stanton.jpg',
+    actor: 'Don Stanton ',
+    role: 'Lewis as T-1000',
+  },
+  {
+    src: 'img/cast/Sharon_Merkerson.jpg',
+    actor: 'С. Ипейта Меркерсон',
+    role: 'Тарисса Дайсон',
+  },
+];
+
+const swiperContainer = document.querySelector('.swiper-cast .swiper-wrapper');
+
+function renderActors() {
+  for (let item of actors) {
+    const slide = document.createElement('div');
+    const img = document.createElement('img');
+    const actorText = document.createElement('p');
+    const roleText = document.createElement('span');
+
+    slide.className = 'swiper-cast-slide swiper-slide ';
+
+    img.src = item.src;
+    img.alt = item.actor;
+
+    actorText.textContent = item.actor;
+    roleText.textContent = item.role;
+
+    slide.append(img, actorText, roleText);
+    swiperContainer.append(slide);
+  }
+}
+
+renderActors();
+
+const swiperCast = new Swiper('.swiper-cast', {
+  slidesPerView: 'auto',
+  spaceBetween: 32,
 });
