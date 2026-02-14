@@ -238,19 +238,34 @@ const actors = [
     role: 'Тим',
   },
   {
-    src: 'img/cast/Dan_Stanton.jpg',
+    src: 'img/cast/dan-stanton.jpg',
     actor: 'Дэн Стэнтон',
-    role: 'Lewis as T-1000',
+    role: 'Льюис',
   },
   {
     src: 'img/cast/Don_Stanton.jpg',
-    actor: 'Don Stanton ',
-    role: 'Lewis as T-1000',
+    actor: 'Дон Стэнтон',
+    role: 'Льюис как T-1000',
   },
   {
     src: 'img/cast/Sharon_Merkerson.jpg',
     actor: 'С. Ипейта Меркерсон',
     role: 'Тарисса Дайсон',
+  },
+  {
+    src: 'img/cast/Castulo Guerra.jpg',
+    actor: 'Кастуло Герра',
+    role: 'Энрике Сальседа',
+  },
+  {
+    src: 'img/cast/Michael Edwards.jpg',
+    actor: 'Майкл Эдвардс',
+    role: 'Джон Коннор в будущем',
+  },
+  {
+    src: 'img/cast/Pete Schrum.jpg',
+    actor: 'Питер Шрум',
+    role: 'Лойд',
   },
 ];
 
@@ -260,10 +275,15 @@ function renderActors() {
   for (let item of actors) {
     const slide = document.createElement('div');
     const img = document.createElement('img');
+    const actorInfo = document.createElement('div');
     const actorText = document.createElement('p');
     const roleText = document.createElement('span');
 
     slide.className = 'swiper-cast-slide swiper-slide ';
+
+    img.addEventListener('error', function () {
+      this.src = 'img/cast/default.svg';
+    });
 
     img.src = item.src;
     img.alt = item.actor;
@@ -271,7 +291,13 @@ function renderActors() {
     actorText.textContent = item.actor;
     roleText.textContent = item.role;
 
-    slide.append(img, actorText, roleText);
+    img.className = 'swiper-cast-img';
+    actorInfo.className = 'swiper-cast-info';
+    actorText.className = 'swiper-cast-actor';
+    roleText.className = 'swiper-cast-role';
+
+    actorInfo.append(actorText, roleText);
+    slide.append(img, actorInfo);
     swiperContainer.append(slide);
   }
 }
@@ -281,4 +307,9 @@ renderActors();
 const swiperCast = new Swiper('.swiper-cast', {
   slidesPerView: 'auto',
   spaceBetween: 32,
+
+  scrollbar: {
+    el: '.swiper-cast-scrollbar',
+    draggable: true,
+  },
 });

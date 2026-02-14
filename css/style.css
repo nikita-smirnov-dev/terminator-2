@@ -973,12 +973,60 @@ img {
   margin-bottom: var(--spacing-40);
 }
 
+.cast__actors {
+  position: relative;
+  margin-bottom: var(--spacing-120);
+}
+
 .swiper-cast {
-  margin-bottom: var(--spacing-80);
+  position: relative;
 }
 
 .swiper-cast-slide {
   width: 180px;
+}
+
+.swiper-cast-img {
+  width: 180px;
+  height: 300px;
+  object-fit: cover;
+}
+
+.swiper-scrollbar.swiper-cast-scrollbar {
+  position: absolute;
+  bottom: -40px;
+  /* left: 5%; */
+  width: 100%;
+  height: 5px;
+  cursor: pointer;
+}
+
+.swiper-scrollbar-drag {
+  background-color: var(--color-text-info, 0.1);
+  filter: brightness(70%);
+}
+
+.swiper-scrollbar-horizontal {
+  background-color: var(--color-tab);
+}
+
+.swiper-cast-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+}
+
+.swiper-cast-actor {
+  margin-bottom: 0;
+  text-align: center;
+  font-size: var(--font-size-18);
+  color: var(--color-text);
+}
+
+.swiper-cast-role {
+  color: var(--color-text-info);
 }
 
 .cast__subtitle {
@@ -1009,29 +1057,60 @@ img {
 
 .cast__wrapper {
   display: grid;
-  grid-template-columns: repeat(5, minmax(160px, 1fr));
+  grid-template-columns: repeat(5, 1fr);
   grid-auto-rows: min-content;
-  gap: 40px 32px;
-  align-items: start;
+  gap: var(--spacing-20);
+  justify-items: center;
   margin-bottom: var(--spacing-40);
 }
 
-.cast__content:nth-child(2),
-.cast__content:nth-child(3),
-.cast__content:nth-child(4),
-.cast__content:nth-child(7),
-.cast__content:nth-child(8),
-.cast__content:nth-child(9) {
-  justify-self: center;
+.cast__content {
+  padding: var(--spacing-10);
 }
 
-.cast__content:nth-child(5) {
-  margin-right: var(--spacing-60);
+.cast__content--director {
+  grid-column: 1;
+  grid-row: 1;
 }
 
-.cast__content:nth-child(5),
-.cast__content:nth-child(10) {
-  justify-self: end;
+.cast__content--screenwriters {
+  grid-column: 4;
+}
+
+.cast__content--producers {
+  grid-column: 2;
+}
+
+.cast__content--operator {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.cast__content--composer {
+  grid-column: 3;
+  grid-row: 1;
+}
+
+.cast__content--sound {
+  grid-column: 3;
+}
+
+.cast__content--artists {
+  grid-column: 4;
+}
+
+.cast__content--editors {
+  grid-column: 5;
+  grid-row: 1;
+}
+
+.cast__content--effects {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.cast__content--visual-effects {
+  grid-column: 5;
 }
 
 .cast__text {
