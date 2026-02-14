@@ -157,30 +157,34 @@ playBtn.forEach((item) => {
   });
 
   item.addEventListener('click', () => {
-    if (currentItem.classList.contains('is-playnig')) {
-      currentItem.classList.remove('is-playnig');
+    if (currentItem.classList.contains('is-playing')) {
+      currentItem.classList.remove('is-playing');
       currentAudio.pause();
+      item.setAttribute('aria-label', 'Воспроизвести саундтрек');
     } else {
       document.querySelectorAll('.soundtrack__player').forEach((el) => {
         if (el === currentItem) return;
 
-        el.classList.remove('is-playnig');
+        el.classList.remove('is-playing');
 
         const audio = el.querySelector('.soundtrack__song');
+        const btn = el.querySelector('.soundtrack__btn');
         const progress = el.querySelector('.soundtrack__progress-bar');
         const timeline = el.querySelector('.soundtrack__timeline');
 
         if (audio) audio.pause();
         if (progress) progress.style.width = '0%';
         timeline.textContent = formatTime(audio.duration);
+        btn.setAttribute('aria-label', 'Поставить на паузу');
       });
-      currentItem.classList.add('is-playnig');
+      currentItem.classList.add('is-playing');
       currentAudio.play();
+      item.setAttribute('aria-label', 'Поставить на паузу');
     }
   });
 
   currentAudio.addEventListener('ended', () => {
-    currentItem.classList.remove('is-playnig');
+    currentItem.classList.remove('is-playing');
     progress.style.width = '0%';
     timeline.textContent = formatTime(currentAudio.duration);
   });
