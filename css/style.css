@@ -166,11 +166,7 @@ img {
   content: '';
   position: absolute;
   inset: 0;
-  background-color: linear-gradient(
-    to top,
-    rgba(0, 0, 0, 0.6),
-    rgba(0, 0, 0, 0.2)
-  );
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2));
 }
 
 .swiper-slide-hero img {
@@ -315,11 +311,7 @@ img {
   position: relative;
   flex: 1;
   padding: 14px 0;
-  background-color: linear-gradient(
-    180deg,
-    var(--color-tab),
-    var(--color-tab-linar)
-  );
+  background: linear-gradient(180deg, var(--color-tab), var(--color-tab-linar));
   border: none;
   color: #aaa;
   font-family: 'terminator-two';

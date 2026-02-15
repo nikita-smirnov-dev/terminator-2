@@ -175,7 +175,7 @@ playBtn.forEach((item) => {
         if (audio) audio.pause();
         if (progress) progress.style.width = '0%';
         timeline.textContent = formatTime(audio.duration);
-        btn.setAttribute('aria-label', 'Поставить на паузу');
+        btn.setAttribute('aria-label', 'Воспроизвести саундтрек');
       });
       currentItem.classList.add('is-playing');
       currentAudio.play();
