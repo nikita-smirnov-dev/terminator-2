@@ -1123,25 +1123,25 @@ img {
   color: var(--color-text);
 }
 
-/* epilogue
+/* conclusion
 ============================================ */
 
-.epilogue__container {
+.conclusion__container {
   padding-top: var(--spacing-50);
   padding-bottom: var(--spacing-50);
 }
 
-.epilogue__title {
+.conclusion__title {
   margin: 0;
   margin-bottom: var(--spacing-40);
 }
 
-.epilogue__content {
+.conclusion__content {
   width: 100%;
   margin: 0 auto;
 }
 
-.epilogue__text {
+.conclusion__text {
   margin: 0;
   margin-bottom: var(--spacing-20);
   font-size: var(--font-size-18);
