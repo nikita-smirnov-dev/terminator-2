@@ -1,3 +1,33 @@
+const getHeaderheight = () => {
+  const heightHeader = document.querySelector('.header').offsetHeight;
+  const root = document.querySelector(':root');
+
+  root.style.setProperty('--header-height', `${heightHeader}px`);
+};
+
+getHeaderheight();
+
+// scroll
+
+const smoothLinks = document.querySelectorAll('a[href^="#"]');
+
+smoothLinks.forEach((link) => {
+  if (!smoothLinks) return;
+
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    const id = link.getAttribute('href');
+
+    if (id === '#') return;
+
+    document.querySelector(id).scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+    });
+  });
+});
+
 const swiper = new Swiper('.swiper-hero', {
   slidesPerView: 1,
   loop: true,
