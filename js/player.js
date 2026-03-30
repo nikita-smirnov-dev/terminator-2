@@ -1,0 +1,84 @@
+export const initPlayer = () => {
+  const playBtn = document.querySelectorAll('.soundtrack__btn');
+
+  function formatTime(time = 0) {
+    if (!Number.isFinite(time)) return '0:00';
+
+    const minutes = Math.floor(time / 60);
+    const seconds = Math.floor(time % 60);
+    return `${minutes}:${seconds.toString().padStart(2, '0')}`;
+  }
+
+  playBtn.forEach((item) => {
+    const currentItem = item.closest('.soundtrack__player');
+    const currentAudio = currentItem.querySelector('.soundtrack__song');
+    const progressContainer = currentItem.querySelector(
+      '.soundtrack__progress',
+    );
+    const progress = currentItem.querySelector('.soundtrack__progress-bar');
+    const timeline = currentItem.querySelector('.soundtrack__timeline');
+
+    currentAudio.addEventListener('loadedmetadata', () => {
+      if (currentAudio.duration) {
+        timeline.textContent = formatTime(currentAudio.duration);
+      } else {
+        timeline.textContent = '0:00';
+      }
+    });
+
+    currentAudio.addEventListener('timeupdate', () => {
+      const progressPercent =
+        (currentAudio.currentTime / currentAudio.duration) * 100;
+
+      progress.style.width = `${progressPercent}%`;
+
+      timeline.textContent = formatTime(currentAudio.currentTime);
+    });
+
+    progressContainer.addEventListener('click', (e) => {
+      if (!currentAudio.duration) return;
+
+      const rect = e.currentTarget.getBoundingClientRect();
+      const clickX = e.clientX - rect.left;
+      const width = rect.width;
+      const duration = currentAudio.duration;
+
+      currentAudio.currentTime = (clickX / width) * duration;
+    });
+
+    item.addEventListener('click', () => {
+      if (currentItem.classList.contains('is-playing')) {
+        currentItem.classList.remove('is-playing');
+        currentAudio.pause();
+        item.setAttribute('aria-label', 'Воспроизвести саундтрек');
+      } else {
+        document.querySelectorAll('.soundtrack__player').forEach((el) => {
+          if (el === currentItem) return;
+
+          el.classList.remove('is-playing');
+
+          const audio = el.querySelector('.soundtrack__song');
+          const btn = el.querySelector('.soundtrack__btn');
+          const progress = el.querySelector('.soundtrack__progress-bar');
+          const timeline = el.querySelector('.soundtrack__timeline');
+
+          if (audio) audio.pause();
+          if (progress) progress.style.width = '0%';
+          timeline.textContent = formatTime(audio.duration);
+          btn.setAttribute('aria-label', 'Воспроизвести саундтрек');
+        });
+        currentItem.classList.add('is-playing');
+        currentAudio.play();
+        item.setAttribute('aria-label', 'Поставить на паузу');
+      }
+    });
+
+    currentAudio.addEventListener('ended', () => {
+      currentItem.classList.remove('is-playing');
+      progress.style.width = '0%';
+      timeline.textContent = formatTime(currentAudio.duration);
+    });
+  });
+};
+
+initPlayer();
