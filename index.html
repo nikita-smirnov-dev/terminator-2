@@ -243,19 +243,33 @@
         </div>
       </section>
       <section class="terminators" id="terminators">
-        <div class="container terminators__conteiner" data-terminators-tabs>
+        <div
+          class="container terminators__conteiner"
+          data-terminators-container
+        >
           <h2 class="section-title terminators__title">Терминаторы</h2>
           <p class="section-text terminators__text">
             Выберите модель для получения информации
           </p>
-          <div class="terminators__tabs">
-            <button class="terminator__tab btn-reset" id="t-800" data-tab-t-800>
+          <div class="terminators__tabs" role="tablist">
+            <button
+              class="terminator__tab btn-reset"
+              id="t-800"
+              data-tab-t-800
+              role="tab"
+              aria-selected="true"
+              aria-controls="panel-t800"
+            >
               T-800 / Model 101
             </button>
             <button
               class="terminator__tab btn-reset"
               id="t-1000"
               data-tab-t-1000
+              role="tab"
+              aria-selected="false"
+              aria-controls="panel-t1000"
+              tabindex="-1"
             >
               Cyberdyne Systems Series 1000 (T-1000)
             </button>
@@ -264,7 +278,11 @@
           <div class="terminators__block">
             <div
               class="terminator__info terminator__info--t800 is-active"
+              id="panel-t800"
+              role="tabpanel"
+              aria-labelledby="t-800"
               data-t-800
+              aria-hidden="false"
             >
               <div class="spec spec--t800">
                 <h4 class="spec__title">Тип</h4>
@@ -358,7 +376,14 @@
               </div>
             </div>
 
-            <div class="terminator__info terminator__info--t1000" data-t-1000>
+            <div
+              class="terminator__info terminator__info--t1000"
+              data-t-1000
+              id="panel-t1000"
+              role="tabpanel"
+              aria-labelledby="t-1000"
+              aria-hidden="true"
+            >
               <div class="spec spec--t1000">
                 <h4 class="spec__title">Тип</h4>
                 <ul class="spec__list list-reset">
@@ -711,16 +736,28 @@
                         />
                       </svg>
                     </button>
-                    <div class="soundtrack__progress">
+                    <div
+                      class="soundtrack__progress"
+                      tabindex="0"
+                      role="progressbar"
+                      aria-label="Прокрутка трека"
+                      aria-valuemin="0"
+                      aria-valuemax="100"
+                    >
                       <div class="soundtrack__progress-bar"></div>
                     </div>
                     <span class="soundtrack__timeline">0 : 00</span>
                     <div class="tooltip-wrapper">
                       <div class="tooltip">
-                        <div class="marker" tabindex="0">
+                        <div
+                          class="marker"
+                          role="button"
+                          tabindex="0"
+                          aria-describedby="tooltip-text-1"
+                        >
                           <span class="dot"></span>
                         </div>
-                        <div class="popup">
+                        <div class="popup" id="tooltip-text-1" role="tooltip">
                           <strong>СИСТЕМНОЕ ПРИМЕЧАНИЕ</strong><br />
                           Оснавная тема фильма. Металлический ритм стал символом
                           всей франшизы
@@ -787,16 +824,28 @@
                         />
                       </svg>
                     </button>
-                    <div class="soundtrack__progress">
+                    <div
+                      class="soundtrack__progress"
+                      tabindex="0"
+                      role="progressbar"
+                      aria-label="Прокрутка трека"
+                      aria-valuemin="0"
+                      aria-valuemax="100"
+                    >
                       <div class="soundtrack__progress-bar"></div>
                     </div>
                     <span class="soundtrack__timeline">0 : 00</span>
                     <div class="tooltip-wrapper">
                       <div class="tooltip">
-                        <div class="marker" tabindex="0">
+                        <div
+                          class="marker"
+                          tabindex="0"
+                          role="button"
+                          aria-describedby="tooltip-text-2"
+                        >
                           <span class="dot"></span>
                         </div>
-                        <div class="popup">
+                        <div class="popup" id="tooltip-text-2" role="tooltip">
                           <strong>СИСТЕМНОЕ ПРИМЕЧАНИЕ</strong><br />
                           Редкий для фильма гитарный трек, добавляющий ощущения
                           движиения и свободы
@@ -860,16 +909,28 @@
                         />
                       </svg>
                     </button>
-                    <div class="soundtrack__progress">
+                    <div
+                      class="soundtrack__progress"
+                      tabindex="0"
+                      role="progressbar"
+                      aria-label="Прокрутка трека"
+                      aria-valuemin="0"
+                      aria-valuemax="100"
+                    >
                       <div class="soundtrack__progress-bar"></div>
                     </div>
                     <span class="soundtrack__timeline">0 : 00</span>
                     <div class="tooltip-wrapper">
                       <div class="tooltip">
-                        <div class="marker" tabindex="0">
+                        <div
+                          class="marker"
+                          tabindex="0"
+                          role="button"
+                          aria-describedby="tooltip-text-3"
+                        >
                           <span class="dot"></span>
                         </div>
-                        <div class="popup">
+                        <div class="popup" id="tooltip-text-3" role="tooltip">
                           <strong>СИСТЕМНОЕ ПРИМЕЧАНИЕ</strong><br />
                           Ироничный контраст: харизма терминатора под
                           классический рок-хит
@@ -934,16 +995,28 @@
                         />
                       </svg>
                     </button>
-                    <div class="soundtrack__progress">
+                    <div
+                      class="soundtrack__progress"
+                      tabindex="0"
+                      role="progressbar"
+                      aria-label="Прокрутка трека"
+                      aria-valuemin="0"
+                      aria-valuemax="100"
+                    >
                       <div class="soundtrack__progress-bar"></div>
                     </div>
                     <span class="soundtrack__timeline">0 : 00</span>
                     <div class="tooltip-wrapper">
                       <div class="tooltip">
-                        <div class="marker" tabindex="0">
+                        <div
+                          class="marker"
+                          tabindex="0"
+                          role="button"
+                          aria-describedby="tooltip-text-4"
+                        >
                           <span class="dot"></span>
                         </div>
-                        <div class="popup">
+                        <div class="popup" id="tooltip-text-4" role="tooltip">
                           <strong>СИСТЕМНОЕ ПРИМЕЧАНИЕ</strong><br />
                           Энергичный трек, усиливающий хаос и темп сцен погони
                         </div>
@@ -1008,16 +1081,28 @@
                         />
                       </svg>
                     </button>
-                    <div class="soundtrack__progress">
+                    <div
+                      class="soundtrack__progress"
+                      tabindex="0"
+                      role="progressbar"
+                      aria-label="Прокрутка трека"
+                      aria-valuemin="0"
+                      aria-valuemax="100"
+                    >
                       <div class="soundtrack__progress-bar"></div>
                     </div>
                     <span class="soundtrack__timeline">0 : 00</span>
                     <div class="tooltip-wrapper">
                       <div class="tooltip">
-                        <div class="marker" tabindex="0">
+                        <div
+                          class="marker"
+                          tabindex="0"
+                          role="button"
+                          aria-describedby="tooltip-text-5"
+                        >
                           <span class="dot"></span>
                         </div>
-                        <div class="popup">
+                        <div class="popup" id="tooltip-text-5" role="tooltip">
                           <strong>СИСТЕМНОЕ ПРИМЕЧАНИЕ</strong><br />
                           Атмосферный трек, отражающий внутренние страхи и
                           напряжения Сары Коннор
@@ -1081,16 +1166,28 @@
                         />
                       </svg>
                     </button>
-                    <div class="soundtrack__progress">
+                    <div
+                      class="soundtrack__progress"
+                      tabindex="0"
+                      role="progressbar"
+                      aria-label="Прокрутка трека"
+                      aria-valuemin="0"
+                      aria-valuemax="100"
+                    >
                       <div class="soundtrack__progress-bar"></div>
                     </div>
                     <span class="soundtrack__timeline">0 : 00</span>
                     <div class="tooltip-wrapper">
                       <div class="tooltip">
-                        <div class="marker" tabindex="0">
+                        <div
+                          class="marker"
+                          tabindex="0"
+                          role="button"
+                          aria-describedby="tooltip-text-6"
+                        >
                           <span class="dot"></span>
                         </div>
-                        <div class="popup">
+                        <div class="popup" id="tooltip-text-6" role="tooltip">
                           <strong>СИСТЕМНОЕ ПРИМЕЧАНИЕ</strong><br />
                           Меланхоличное завершение истории, подчеркивающее
                           жертву Терминатора

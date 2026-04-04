@@ -14,18 +14,26 @@ export const initActorsSlider = () => {
       const actorInfo = document.createElement('div');
       const actorText = document.createElement('p');
       const roleText = document.createElement('span');
+      const srOnly = document.createElement('span');
 
       slide.className = 'swiper-cast-slide swiper-slide ';
+      slide.setAttribute('tabindex', '0');
+
+      srOnly.classList.add('visually-hidden');
+      srOnly.textContent = `Карточка актёра: ${item.actor} в роли ${item.role}`;
 
       img.addEventListener('error', function () {
         this.src = 'img/cast/default.svg';
       });
 
       img.src = item.src;
-      img.alt = item.actor;
+      img.alt = '';
+      img.setAttribute('aria-hidden', 'true');
 
       actorText.textContent = item.actor;
       roleText.textContent = item.role;
+      actorText.setAttribute('aria-hidden', 'true');
+      roleText.setAttribute('aria-hidden', 'true');
 
       img.className = 'swiper-cast-img';
       actorInfo.className = 'swiper-cast-info';
@@ -33,7 +41,7 @@ export const initActorsSlider = () => {
       roleText.className = 'swiper-cast-role';
 
       actorInfo.append(actorText, roleText);
-      slide.append(img, actorInfo);
+      slide.append(img, actorInfo, srOnly);
       swiperContainer.append(slide);
     }
   }
@@ -43,6 +51,21 @@ export const initActorsSlider = () => {
   const swiperCast = new Swiper('.swiper-cast', {
     slidesPerView: 'auto',
     spaceBetween: 32,
+
+    a11y: {
+      enabled: true,
+      prevSlideMessage: 'Предыдущий слайд',
+      nextSlideMessage: 'Следующий слайд',
+      notificationClass: 'swiper-notification',
+      containerMessage: 'Список актеров фильма',
+      itemRoleDescriptionMessage: null,
+    },
+
+    keyboard: {
+      enabled: true,
+      onlyInViewport: true,
+      pageUpDown: true,
+    },
 
     scrollbar: {
       el: '.swiper-cast-scrollbar',

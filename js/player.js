@@ -1,6 +1,8 @@
 export const initPlayer = () => {
   const playBtn = document.querySelectorAll('.soundtrack__btn');
 
+  if (!playBtn.length) return;
+
   function formatTime(time = 0) {
     if (!Number.isFinite(time)) return '0:00';
 
@@ -27,12 +29,35 @@ export const initPlayer = () => {
     });
 
     currentAudio.addEventListener('timeupdate', () => {
+      if (!currentAudio.duration) return;
+
       const progressPercent =
         (currentAudio.currentTime / currentAudio.duration) * 100;
+      progressContainer.setAttribute(
+        'aria-valuenow',
+        Math.round(progressPercent),
+      );
 
       progress.style.width = `${progressPercent}%`;
 
       timeline.textContent = formatTime(currentAudio.currentTime);
+    });
+
+    progressContainer.addEventListener('keydown', (e) => {
+      if (!currentAudio.duration) return;
+
+      switch (e.key) {
+        case 'ArrowRight':
+        case 'ArrowDown':
+          e.preventDefault();
+          currentAudio.currentTime = currentAudio.currentTime + 5;
+          break;
+        case 'ArrowLeft':
+        case 'ArrowUp':
+          e.preventDefault();
+          currentAudio.currentTime = currentAudio.currentTime - 5;
+          break;
+      }
     });
 
     progressContainer.addEventListener('click', (e) => {
@@ -75,6 +100,7 @@ export const initPlayer = () => {
 
     currentAudio.addEventListener('ended', () => {
       currentItem.classList.remove('is-playing');
+      item.setAttribute('aria-label', 'Воспроизвести саундтрек');
       progress.style.width = '0%';
       timeline.textContent = formatTime(currentAudio.duration);
     });

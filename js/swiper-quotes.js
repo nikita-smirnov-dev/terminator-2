@@ -26,12 +26,16 @@ export const initQuotesSlider = () => {
   const swiper = new Swiper('.swiper-hero', {
     slidesPerView: 1,
     loop: true,
-    speed: 1000,
+    speed: 2500,
     effect: 'fade',
+    fadeEffect: {
+      crossFade: true,
+    },
     autoplay: {
-      delay: 2500,
+      delay: 5000,
       disableOnInteraction: false,
     },
+    watchSlidesProgress: true,
   });
 };
 

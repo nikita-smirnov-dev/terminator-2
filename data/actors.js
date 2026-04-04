@@ -32,7 +32,7 @@ const actors = [
   {
     src: 'img/cast/Lesly_Hamilton.jpg',
     actor: 'Лесли Хэмилтон',
-    role: 'Twin Sarah',
+    role: 'Двойник Сары Коннор',
   },
   {
     src: 'img/cast/Alexander_Berkeley.jpg',
@@ -57,7 +57,7 @@ const actors = [
   {
     src: 'img/cast/Don_Stanton.jpg',
     actor: 'Дон Стэнтон',
-    role: 'Льюис как T-1000',
+    role: 'Двойник Льюиса',
   },
   {
     src: 'img/cast/Sharon_Merkerson.jpg',
