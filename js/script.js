@@ -1,4 +1,5 @@
 import '../js/scroll-nav.js';
+import '../js/burger.js';
 import '../js/swiper-quotes.js';
 import '../js/swiper-actors.js';
 import '../js/tab.js';

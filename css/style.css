@@ -59,7 +59,7 @@ section {
 .container {
   max-width: 1630px;
   margin: 0 auto;
-  padding: 0 15px;
+  padding: 0 20px;
 }
 
 :focus-visible {
@@ -77,6 +77,10 @@ section {
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   border: 0;
+}
+
+.stop-scroll {
+  overflow: hidden;
 }
 
 /* header
@@ -150,6 +154,10 @@ section {
 
 .nav__link:hover {
   opacity: 1;
+}
+
+.burger {
+  display: none;
 }
 
 /* hero

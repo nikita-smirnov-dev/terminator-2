@@ -30,6 +30,7 @@
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/variables.css" />
     <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="css/media.css" />
     <title>Terminator 2: Judgment Day</title>
   </head>
   <body class="page">
@@ -54,7 +55,7 @@
             <span>Systems</span>
           </span>
         </a>
-        <nav class="nav" data-nav>
+        <nav class="nav" id="nav-menu" data-nav>
           <ul class="nav__list list-reset">
             <li class="nav__item">
               <a class="nav__link" href="#plot" data-nav-link data-nav-link-one
@@ -79,6 +80,17 @@
             </li>
           </ul>
         </nav>
+        <button
+          class="burger btn-reset"
+          aria-label="Открыть меню"
+          aria-expanded="false"
+          aria-controls="nav-menu"
+          data-burger
+        >
+          <span class="burger__line"></span>
+          <span class="burger__line"></span>
+          <span class="burger__line"></span>
+        </button>
       </div>
     </header>
     <main class="main">
