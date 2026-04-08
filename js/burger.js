@@ -37,17 +37,14 @@ export const initBurger = () => {
       closeMenu();
     }
   });
+
   window.addEventListener('click', (e) => {
     const isMenuVisible = nav.classList.contains('nav--visible');
     const isClickOnBurger = burger.contains(e.target);
 
-    // Если меню открыто и мы нажали НЕ на кнопку бургера
     if (isMenuVisible && !isClickOnBurger) {
-      // 1. Проверяем, нажал ли пользователь на ссылку (чтобы закрыть после перехода)
       const isClickOnLink = e.target.closest('[data-nav-link]');
 
-      // 2. Проверяем, нажал ли пользователь на оверлей (само тело .nav, но не список внутри него)
-      // Это сработает, если список .nav__list не занимает 100% ширины .nav
       const isClickOnOverlay = e.target === nav;
 
       if (isClickOnLink || isClickOnOverlay) {

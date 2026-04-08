@@ -12,6 +12,7 @@ export const initQuotesSlider = () => {
       const slide = document.createElement('div');
 
       slide.className = 'swiper-slide-hero swiper-slide ';
+      slide.style = `background-image: url(${item.src})`;
 
       slide.innerHTML = `
       <img src="${item.src}" alt="${item.title}">

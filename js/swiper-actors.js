@@ -49,8 +49,9 @@ export const initActorsSlider = () => {
   renderActors();
 
   const swiperCast = new Swiper('.swiper-cast', {
-    slidesPerView: 'auto',
-    spaceBetween: 32,
+    slidesPerView: 1.5,
+    slidesPerGroup: 1,
+    spaceBetween: 20,
 
     a11y: {
       enabled: true,
@@ -70,6 +71,12 @@ export const initActorsSlider = () => {
     scrollbar: {
       el: '.swiper-cast-scrollbar',
       draggable: true,
+    },
+    breakpoints: {
+      374: {
+        slidesPerView: 'auto',
+        spaceBetween: 32,
+      },
     },
   });
 };

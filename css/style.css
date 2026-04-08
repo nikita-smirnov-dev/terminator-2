@@ -83,6 +83,15 @@ section {
   overflow: hidden;
 }
 
+.section-offset {
+  padding-top: var(--spacing-50);
+  padding-bottom: var(--spacing-50);
+}
+
+.wrapper {
+  overflow: clip;
+}
+
 /* header
 ============================================ */
 
@@ -186,6 +195,7 @@ section {
   height: 70vh;
   max-height: 800px;
   overflow: hidden;
+  background-color: var(--color-black);
 }
 
 .swiper-slide-hero {
@@ -221,6 +231,7 @@ section {
   bottom: 40px;
   left: 40px;
   right: 40px;
+  margin: 0;
   font-size: var(--font-size-26);
   text-shadow:
     0 0 2px rgba(240, 39, 39, 0.25),
@@ -255,8 +266,6 @@ section {
 
 .plot__container {
   position: relative;
-  padding-top: var(--spacing-50);
-  padding-bottom: var(--spacing-50);
 }
 
 .plot__container::before {
@@ -324,11 +333,6 @@ section {
   overflow: hidden;
 }
 
-.terminators__conteiner {
-  padding-top: var(--spacing-50);
-  padding-bottom: var(--spacing-50);
-}
-
 .terminators__title {
   margin: 0;
   margin-bottom: var(--spacing-20);
@@ -378,27 +382,32 @@ section {
 }
 
 .terminators__block {
-  position: relative;
-  min-height: 1100px;
+  display: grid;
+  grid-template-columns: 1fr;
+  min-height: 600px;
 }
 
 .terminator__info {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: absolute;
-  inset: 0;
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
   pointer-events: none;
   opacity: 0;
+  visibility: hidden;
   transform: translateX(40px) scale(0.98);
   filter: blur(4px);
   transition:
     opacity 0.5s ease,
     transform 0.5s ease,
+    visibility 0.5s ease,
     filter 0.5s ease;
 }
 
 .terminator__info.is-active {
+  visibility: visible;
+  pointer-events: all;
   opacity: 1;
   transform: translateX(0) scale(1);
   filter: blur(0);
@@ -509,11 +518,6 @@ section {
 
 /* about
 ============================================ */
-
-.about__container {
-  padding-top: var(--spacing-50);
-  padding-bottom: var(--spacing-50);
-}
 
 .about__title {
   margin: 0;
@@ -698,8 +702,8 @@ section {
   animation: scanline 3s linear infinite;
 }
 
-.about-data-value,
-.about-budget-value,
+.about-data__value,
+.about-budget__value,
 .about-awards__value,
 .about-impact__value {
   flex: 0 0 300px;
@@ -740,11 +744,6 @@ section {
 
 /* soundtracks
 ============================================ */
-
-.soundtracks__container {
-  padding-top: var(--spacing-50);
-  padding-bottom: var(--spacing-50);
-}
 
 .soundtracks__title {
   margin: 0;
@@ -916,7 +915,7 @@ section {
 
 .tooltip-wrapper {
   position: absolute;
-  left: 0;
+  left: 40%;
 }
 
 .tooltip {
@@ -957,13 +956,15 @@ section {
 .popup {
   position: absolute;
   top: 100%;
-  left: 0;
+  left: 50%;
   width: 420px;
+  max-width: 85vw;
   margin-top: 10px;
   padding: 15px;
   color: var(--color-text);
   border-radius: 5px;
   border-left: 2px solid var(--color-accent);
+  box-sizing: border-box;
   background: linear-gradient(
     180deg,
     rgba(255, 0, 0, 0.08),
@@ -972,7 +973,7 @@ section {
   letter-spacing: 0.04em;
   pointer-events: none;
   opacity: 0;
-  transform: translateY(-6px) scaleY(0.98);
+  transform: translateX(-50%) translateY(-6px) scaleY(0.98);
   filter: blur(2px);
   transition:
     opacity 0.25s ease,
@@ -989,7 +990,7 @@ section {
 .marker:hover + .popup,
 .marker:focus + .popup {
   opacity: 1;
-  transform: translateY(0) scaleY(1);
+  transform: translateX(-50%) translateY(0) scaleY(1);
   filter: blur(0);
 }
 
@@ -1006,11 +1007,6 @@ section {
 
 /* cast
 ============================================ */
-
-.cast__container {
-  padding-top: var(--spacing-50);
-  padding-bottom: var(--spacing-50);
-}
 
 .cast__title {
   margin: 0;
@@ -1037,15 +1033,14 @@ section {
 }
 
 .swiper-cast-img {
-  width: 180px;
-  height: 300px;
+  /* width: 180px;
+  height: 300px; */
   object-fit: cover;
 }
 
 .swiper-scrollbar.swiper-cast-scrollbar {
   position: absolute;
   bottom: -40px;
-  /* left: 5%; */
   width: 100%;
   height: 5px;
   cursor: pointer;
@@ -1171,7 +1166,7 @@ section {
   color: var(--color-text-info);
 }
 
-.cast_item {
+.cast__item {
   line-height: 1.5;
   font-size: var(--font-size-20);
   color: var(--color-text);
@@ -1179,11 +1174,6 @@ section {
 
 /* conclusion
 ============================================ */
-
-.conclusion__container {
-  padding-top: var(--spacing-50);
-  padding-bottom: var(--spacing-50);
-}
 
 .conclusion__title {
   margin: 0;
