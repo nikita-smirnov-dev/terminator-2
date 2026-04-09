@@ -28,13 +28,18 @@ export const initAboutAnimation = () => {
   ];
 
   let hasAnimated = false;
-  let delay = 0;
+
+  const isMobile = window.innerWidth <= 768;
+  const triggerThreshold = isMobile ? 0.1 : 0.5;
+  // let delay = 0;
 
   const observer = new IntersectionObserver(
     (entries, observer) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting && !hasAnimated) {
           hasAnimated = true;
+
+          let delay = 0;
 
           groups.forEach((group) => {
             group.forEach((item) => {
@@ -69,7 +74,7 @@ export const initAboutAnimation = () => {
       });
     },
     {
-      threshold: 0.5,
+      threshold: triggerThreshold,
     },
   );
 
