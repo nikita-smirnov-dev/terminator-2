@@ -30,8 +30,7 @@ export const initAboutAnimation = () => {
   let hasAnimated = false;
 
   const isMobile = window.innerWidth <= 768;
-  const triggerThreshold = isMobile ? 0.1 : 0.5;
-  // let delay = 0;
+  const triggerThreshold = isMobile ? 0.2 : 0.5;
 
   const observer = new IntersectionObserver(
     (entries, observer) => {

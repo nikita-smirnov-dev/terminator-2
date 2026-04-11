@@ -39,17 +39,11 @@ export const initBurger = () => {
   });
 
   window.addEventListener('click', (e) => {
-    const isMenuVisible = nav.classList.contains('nav--visible');
-    const isClickOnBurger = burger.contains(e.target);
+    const isClickInsideNav = e.target.closest('[data-nav]');
+    const isClickOnBurger = e.target.closest('[data-burger]');
 
-    if (isMenuVisible && !isClickOnBurger) {
-      const isClickOnLink = e.target.closest('[data-nav-link]');
-
-      const isClickOnOverlay = e.target === nav;
-
-      if (isClickOnLink || isClickOnOverlay) {
-        closeMenu();
-      }
+    if (!isClickInsideNav && !isClickOnBurger) {
+      closeMenu();
     }
   });
 };

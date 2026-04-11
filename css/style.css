@@ -157,12 +157,13 @@ section {
   font-size: var(--font-size-20);
   letter-spacing: 1px;
   color: var(--color-text);
-  opacity: 0.8;
-  transition: opacity 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
 }
 
-.nav__link:hover {
-  opacity: 1;
+@media (hover: hover) {
+  .nav__link:hover {
+    color: #b71c1c;
+  }
 }
 
 .burger {
@@ -632,31 +633,6 @@ section {
   transform: translateX(-10px);
 }
 
-.about-data__item::after,
-.about-budget__item::after,
-.about-awards__item::after,
-.about-impact__item::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(176, 196, 222, 0.15),
-    transparent
-  );
-}
-
-.about-data__item:hover::after,
-.about-budget__item:hover::after,
-.about-awards__item:hover::after,
-.about-impact__item:hover::after {
-  animation: scan 0.8s linear;
-}
-
 .about-data__item.is-visible,
 .about-budget__item.is-visible,
 .about-awards__item.is-visible,
@@ -711,7 +687,7 @@ section {
 .about-impact__value {
   flex: 0 0 300px;
   text-align: left;
-  font-weight: 600;
+  line-height: 1.5;
 }
 
 .about-awards__content,
@@ -720,12 +696,6 @@ section {
 }
 
 @keyframes scanline {
-  to {
-    left: 100%;
-  }
-}
-
-@keyframes scan {
   to {
     left: 100%;
   }
@@ -768,25 +738,22 @@ section {
   align-items: center;
   gap: 20px;
   padding: var(--spacing-20) var(--spacing-20);
-  background: linear-gradient(
-    90deg,
-    rgba(255, 255, 255, 0.04),
-    rgba(255, 255, 255, 0.01)
-  );
+  background: var(--color-item);
   opacity: 0.85;
   transition:
     box-shadow 0.3s ease-in-out,
     opacity 0.3s ease-in-out;
 }
 
-.soundtrack:hover {
-  opacity: 1;
-  box-shadow: inset 0 0 0 1px rgba(255, 60, 47, 0.3);
-}
-
-.soundtrack:focus-within {
-  opacity: 1;
-  box-shadow: inset 0 0 0 1px rgba(255, 60, 47, 0.3);
+@media (hover: hover) {
+  .soundtrack:hover {
+    opacity: 1;
+    box-shadow: inset 0 0 0 1px rgba(255, 60, 47, 0.3);
+  }
+  .soundtrack:focus-within {
+    opacity: 1;
+    box-shadow: inset 0 0 0 1px rgba(255, 60, 47, 0.3);
+  }
 }
 
 .soundtrack:not(:last-child) {
@@ -844,27 +811,46 @@ section {
   width: 42px;
   height: 42px;
   border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.04);
+  background-color: var(--color-player-btn);
+  transform: translateY(-2px);
   transition:
-    background-color 0.2s ease,
-    box-shadow 0.2s ease;
+    background-color 0.3s ease-in-out,
+    transform 0.3s ease;
 }
 
-.soundtrack__btn:hover {
-  background-color: rgba(255, 60, 47, 0.12);
-  box-shadow: 0 0 10px rgba(255, 60, 47, 0.3);
+@media (hover: hover) {
+  .soundtrack__btn:hover {
+    background-color: var(--color-black);
+  }
+
+  .soundtrack__btn:hover .soundtrack__icon {
+    fill: var(--color-accent);
+  }
+}
+
+.soundtrack__btn:active {
+  transform: scale(0.96);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  background-color: #3f4850;
 }
 
 .is-playing .soundtrack__btn {
-  background: rgba(255, 60, 47, 0.18);
-  box-shadow: 0 0 12px rgba(255, 60, 47, 0.4);
+  background-color: var(--color-accent);
+}
+
+.is-playing .soundtrack__btn .soundtrack__icon {
+  fill: var(--color-black);
 }
 
 .soundtrack__icon {
   position: absolute;
   width: 20px;
   height: 20px;
-  transition: opacity 0.2 ease-in-out;
+  fill: rgba(255, 60, 47, 0.6);
+  transition:
+    opacity 0.3s ease-in-out,
+    fill 0.3s ease-in-out;
+  pointer-events: none;
 }
 
 .icon-play,
