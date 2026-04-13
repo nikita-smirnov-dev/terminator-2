@@ -1,4 +1,10 @@
 @media (max-width: 1023.98px) {
+  a,
+  button,
+  .soundtrack__progress {
+    -webkit-tap-highlight-color: transparent;
+  }
+
   .burger {
     display: block;
     position: relative;
@@ -113,6 +119,30 @@
   .terminator__unit--left {
     top: 30%;
     right: 0;
+  }
+
+  .soundtrack__btn:hover {
+    background-color: var(--color-player-btn);
+    transform: translateY(-2px);
+  }
+
+  .soundtrack__btn:hover .soundtrack__icon {
+    fill: rgba(255, 60, 47, 0.6);
+  }
+
+  .soundtrack__btn:active {
+    background-color: #3f4850;
+    transform: scale(0.95);
+    filter: brightness(1.2);
+    transition: transform 0.1s;
+  }
+
+  .is-playing .soundtrack__btn {
+    background-color: var(--color-accent);
+  }
+
+  .is-playing .soundtrack__btn .soundtrack__icon {
+    fill: var(--color-black);
   }
 
   .tooltip-wrapper {
@@ -542,6 +572,10 @@
 
   .soundtrack {
     padding: var(--spacing-12) var(--spacing-10);
+  }
+
+  .soundtrack:hover {
+    box-shadow: none;
   }
 
   .soundtrack__descr {

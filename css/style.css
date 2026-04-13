@@ -160,10 +160,12 @@ section {
   transition: color 0.3s ease-in-out;
 }
 
-@media (hover: hover) {
-  .nav__link:hover {
-    color: #b71c1c;
-  }
+.nav__link:hover {
+  color: var(--color-hover);
+}
+
+.nav__link:active {
+  color: var(--color-accent);
 }
 
 .burger {
@@ -196,7 +198,7 @@ section {
   height: 70vh;
   max-height: 800px;
   overflow: hidden;
-  background-color: var(--color-black);
+  background: gray;
 }
 
 .swiper-slide-hero {
@@ -318,8 +320,14 @@ section {
   direction: ltr;
 }
 
+.plot__content picture {
+  width: 100%;
+  height: 100%;
+}
+
 .plot__img {
   width: 100%;
+  height: 100%;
   object-fit: cover;
 }
 
@@ -745,15 +753,13 @@ section {
     opacity 0.3s ease-in-out;
 }
 
-@media (hover: hover) {
-  .soundtrack:hover {
-    opacity: 1;
-    box-shadow: inset 0 0 0 1px rgba(255, 60, 47, 0.3);
-  }
-  .soundtrack:focus-within {
-    opacity: 1;
-    box-shadow: inset 0 0 0 1px rgba(255, 60, 47, 0.3);
-  }
+.soundtrack:hover {
+  opacity: 1;
+  box-shadow: inset 0 0 0 1px rgba(255, 60, 47, 0.3);
+}
+.soundtrack:focus-within {
+  opacity: 1;
+  box-shadow: inset 0 0 0 1px rgba(255, 60, 47, 0.3);
 }
 
 .soundtrack:not(:last-child) {
@@ -818,19 +824,16 @@ section {
     transform 0.3s ease;
 }
 
-@media (hover: hover) {
-  .soundtrack__btn:hover {
-    background-color: var(--color-black);
-  }
+.soundtrack__btn:hover {
+  background-color: var(--color-black);
+}
 
-  .soundtrack__btn:hover .soundtrack__icon {
-    fill: var(--color-accent);
-  }
+.soundtrack__btn:hover .soundtrack__icon {
+  fill: var(--color-accent);
 }
 
 .soundtrack__btn:active {
   transform: scale(0.96);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
   background-color: #3f4850;
 }
 
@@ -1084,10 +1087,19 @@ section {
   margin-bottom: var(--spacing-40);
 }
 
+.cast__block picture {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
 .cast__img {
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: top center;
+  background: gray;
 }
 
 .cast__wrapper {
