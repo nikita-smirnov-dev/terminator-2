@@ -15,7 +15,10 @@ export const initQuotesSlider = () => {
       slide.style = `background-image: url(${item.src})`;
 
       slide.innerHTML = `
-      <img src="${item.src}" alt="${item.title}">
+      <picture>
+        <source srcset="${item.srcset}" type="${item.type}">
+        <img src="${item.src}" alt="${item.title}">
+      </picture>
       <p class='swiper-text'>${item.text}</p>
       `;
       swiperContainer.append(slide);

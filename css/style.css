@@ -198,7 +198,7 @@ section {
   height: 70vh;
   max-height: 800px;
   overflow: hidden;
-  background: gray;
+  background: var(--color-black);
 }
 
 .swiper-slide-hero {
@@ -216,6 +216,12 @@ section {
   position: absolute;
   inset: 0;
   background: linear-gradient(to top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2));
+}
+
+.swiper-slide-hero picture {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 .swiper-slide-hero img {
@@ -1015,7 +1021,10 @@ section {
 }
 
 .swiper-cast-slide {
-  width: 180px;
+  display: flex;
+  flex-direction: column;
+  /* width: 180px; */
+  height: auto;
 }
 
 .swiper-cast-slide:focus-visible {
@@ -1025,8 +1034,9 @@ section {
 }
 
 .swiper-cast-img {
-  /* width: 180px;
-  height: 300px; */
+  display: block;
+  width: 100%;
+  aspect-ratio: 2 / 3;
   object-fit: cover;
 }
 
@@ -1051,20 +1061,27 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  height: 80px;
+  text-align: center;
+  padding-top: 15px;
+  min-height: 80px;
   text-align: center;
 }
 
 .swiper-cast-actor {
-  margin-bottom: 0;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  width: 100%;
+  margin: 0;
+  margin-bottom: 5px;
   font-size: var(--font-size-18);
   color: var(--color-text);
 }
 
 .swiper-cast-role {
   color: var(--color-text-info);
+  font-size: var(--font-size-14);
 }
 
 .cast__subtitle {

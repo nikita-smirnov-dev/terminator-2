@@ -436,7 +436,7 @@
     z-index: 1;
   }
 
-  .swiper-slide-hero img {
+  .swiper-slide-hero picture {
     position: relative;
     margin-top: 20px;
     width: 100%;
@@ -637,8 +637,9 @@
     margin-bottom: var(--spacing-80);
   }
 
-  .swiper-cast-slide {
-    width: 140px;
+  .swiper-cast-info {
+    min-height: 60px;
+    padding-top: 5px;
   }
 
   .swiper-cast-actor {
@@ -679,6 +680,12 @@
 
   .footer {
     padding: var(--spacing-20) 0;
+  }
+}
+
+@media (max-width: 450.98px) {
+  .plot__img {
+    aspect-ratio: 1.5;
   }
 }
 
