@@ -70,8 +70,8 @@ const actors = [
     type: 'image/webp',
   },
   {
-    src: 'img/cast/dan-stanto',
-    srcset: 'img/cast/dan-stanto',
+    src: 'img/cast/dan-stanton.jpg',
+    srcset: 'img/cast/dan-stanton.webp',
     actor: 'Дэн Стэнтон',
     role: 'Льюис',
     type: 'image/webp',

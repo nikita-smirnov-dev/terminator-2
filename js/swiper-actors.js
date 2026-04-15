@@ -35,6 +35,7 @@ export const initActorsSlider = () => {
 
       img.src = item.src;
       img.alt = '';
+      img.loading = 'lazy';
       img.setAttribute('aria-hidden', 'true');
 
       actorText.textContent = item.actor;
@@ -57,31 +58,27 @@ export const initActorsSlider = () => {
   renderActors();
 
   const swiperCast = new Swiper('.swiper-cast', {
-    // slidesPerView: 1.5,
-    // slidesPerGroup: 1,
-    // spaceBetween: 20,
-    slidesPerView: 2.5, // На самых маленьких экранах видим 1 полных слайд и половинку следующего
+    slidesPerView: 2.5,
     spaceBetween: 16,
 
     breakpoints: {
-      // Когда ширина экрана >= 480px
       480: {
         slidesPerView: 3.5,
         spaceBetween: 20,
       },
-      // Когда ширина экрана >= 768px (планшет)
+
       768: {
         slidesPerView: 4.5,
         spaceBetween: 24,
       },
-      // Когда ширина экрана >= 1024px (ноутбук)
+
       1024: {
         slidesPerView: 5.5,
         spaceBetween: 32,
       },
-      // Когда ширина экрана >= 1280px (монитор)
+
       1280: {
-        slidesPerView: 6, // На больших экранах показываем много актеров в ряд
+        slidesPerView: 6,
         spaceBetween: 40,
       },
     },
@@ -105,12 +102,6 @@ export const initActorsSlider = () => {
       el: '.swiper-cast-scrollbar',
       draggable: true,
     },
-    // breakpoints: {
-    //   374: {
-    //     slidesPerView: 'auto',
-    //     spaceBetween: 32,
-    //   },
-    // },
   });
 };
 

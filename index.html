@@ -3,6 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Сайт о фильме Терминатор 2: Судный день. Актерский состав, цитаты героев, музыка и характеристики терминаторов в легендарном боевике Джеймса Кэмерона."
+    />
     <link rel="icon" href="./img/favicon/favicon.ico" />
     <link
       rel="apple-touch-icon"
@@ -22,6 +26,7 @@
       sizes="16x16"
       href="./img/favicon/favicon-16x16.png"
     />
+    <link rel="preload" as="image" href="img/slider/T-800.webp" />
     <link rel="stylesheet" href="css/fonts.css" />
     <link
       rel="stylesheet"
@@ -261,12 +266,12 @@
             <div class="plot__content plot__content--side">
               <picture>
                 <source
-                  srcset="img/plot/john and terminators.webp"
+                  srcset="img/plot/john-and-terminators.webp"
                   type="image/webp"
                 />
                 <img
                   class="plot__img"
-                  src="./img/plot/john and terminators.jpg"
+                  src="./img/plot/john-and-terminators.jpg"
                   alt="Джон с терминатором смолтрят на жидкий метал"
                   loading="lazy"
                   width="1500"
@@ -431,11 +436,17 @@
                   </ul>
                 </div>
                 <div class="terminator__images">
-                  <img
-                    class="terminator__unit terminator__unit--left"
-                    src="./img/terminators/t-800.png"
-                    alt="Терминатор Т-800"
-                  />
+                  <picture>
+                    <source
+                      srcset="./img/terminators/t-800.webp"
+                      type="image/webp"
+                    />
+                    <img
+                      class="terminator__unit terminator__unit--left"
+                      src="./img/terminators/t-800.png"
+                      alt="Терминатор Т-800"
+                    />
+                  </picture>
                 </div>
               </div>
 
@@ -546,11 +557,18 @@
                   </ul>
                 </div>
                 <div class="terminator__images">
-                  <img
-                    class="terminator__unit terminator__unit--right"
-                    src="./img/terminators/t-1000.png"
-                    alt="Терминатор Т-1000"
-                  />
+                  <picture>
+                    <source
+                      srcset="./img/terminators/t-1000.webp"
+                      type="image/webp"
+                    />
+
+                    <img
+                      class="terminator__unit terminator__unit--right"
+                      src="./img/terminators/t-1000.png"
+                      alt="Терминатор Т-1000"
+                    />
+                  </picture>
                 </div>
               </div>
             </div>
@@ -1514,7 +1532,7 @@
         </div>
       </footer>
       <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
-      <script src="./js/script.js" type="module"></script>
+      <script src="./js/script.js" type="module" defer></script>
     </div>
   </body>
 </html>
