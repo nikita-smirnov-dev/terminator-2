@@ -1,6 +1,6 @@
-import actors from '../data/actors.js';
+import actors from '../../data/actors.js';
 
-export const initActorsSlider = () => {
+const initActorsSlider = () => {
   const swiperContainer = document.querySelector(
     '.swiper-cast .swiper-wrapper',
   );
@@ -10,47 +10,29 @@ export const initActorsSlider = () => {
   function renderActors() {
     for (let item of actors) {
       const slide = document.createElement('div');
-      const picture = document.createElement('picture');
-      const source = document.createElement('source');
-      const img = document.createElement('img');
-      const actorInfo = document.createElement('div');
-      const actorText = document.createElement('p');
-      const roleText = document.createElement('span');
-      const srOnly = document.createElement('span');
       const defaultImg = 'img/cast/default.svg';
 
-      slide.className = 'swiper-cast-slide swiper-slide ';
+      slide.className = 'swiper-slide cast-card';
       slide.setAttribute('tabindex', '0');
 
-      source.srcset = item.srcset;
-      source.type = item.type;
+      slide.innerHTML = `
+          <picture>
+            <source srcset="${item.srcset}" type="image/webp" />
+            <img class="cast-card__img" src='${item.src}' alt="" aria-hidden="true" loading="lazy" />
+          </picture>
+          <div class="cast-card__info">
+            <div class="cast-card__actor" aria-hidden="true">${item.actor}</div>
+            <span class="cast-card__role" aria-hidden="true">${item.role}</span>
+          </div>
+          <span class="visually-hidden">Карточка актёра: ${item.actor} в роли ${item.role}</span>
+      `;
+      const img = slide.querySelector('img');
+      const source = slide.querySelector('source');
 
-      srOnly.classList.add('visually-hidden');
-      srOnly.textContent = `Карточка актёра: ${item.actor} в роли ${item.role}`;
-
-      img.onerror = () => {
+      img.addEventListener('error', () => {
         img.src = defaultImg;
         source.srcset = defaultImg;
-      };
-
-      img.src = item.src;
-      img.alt = '';
-      img.loading = 'lazy';
-      img.setAttribute('aria-hidden', 'true');
-
-      actorText.textContent = item.actor;
-      roleText.textContent = item.role;
-      actorText.setAttribute('aria-hidden', 'true');
-      roleText.setAttribute('aria-hidden', 'true');
-
-      img.className = 'swiper-cast-img';
-      actorInfo.className = 'swiper-cast-info';
-      actorText.className = 'swiper-cast-actor';
-      roleText.className = 'swiper-cast-role';
-
-      actorInfo.append(actorText, roleText);
-      picture.append(source, img);
-      slide.append(picture, actorInfo, srOnly);
+      });
       swiperContainer.append(slide);
     }
   }

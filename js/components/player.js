@@ -1,4 +1,4 @@
-export const initPlayer = () => {
+const initPlayer = () => {
   const playBtn = document.querySelectorAll('.soundtrack__btn');
 
   if (!playBtn.length) return;

@@ -28,13 +28,10 @@
     />
     <link rel="preload" as="image" href="img/slider/T-800.webp" />
     <link rel="stylesheet" href="css/fonts.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
-    />
+    <link rel="stylesheet" href="css/vendor/swiper-bundle.min.css" />
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/variables.css" />
-    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/media.css" />
     <title>Terminator 2: Judgment Day</title>
   </head>
@@ -107,8 +104,8 @@
         <section class="hero">
           <div class="container hero__container">
             <h1 class="hero__title">Terminator 2: Judgment Day</h1>
-            <div class="swiper swiper-hero">
-              <div class="swiper-wrapper"></div>
+            <div class="swiper hero__content">
+              <div class="swiper-wrapper hero__wrapper"></div>
             </div>
           </div>
         </section>
@@ -117,7 +114,10 @@
             <h2 class="section-title plot__title">Сюжет</h2>
             <div class="plot__content">
               <picture>
-                <source srcset="img/plot/judgment-day.webp" type="image/webp" />
+                <source
+                  srcset="./img/plot/judgment-day.webp"
+                  type="image/webp"
+                />
                 <img
                   class="plot__img"
                   src="./img/plot/judgment-day.jpg"
@@ -143,7 +143,7 @@
             </div>
             <div class="plot__content plot__content--side">
               <picture>
-                <source srcset="img/plot/model_101.webp" type="image/webp" />
+                <source srcset="./img/plot/model_101.webp" type="image/webp" />
                 <img
                   class="plot__img"
                   src="./img/plot/model_101.jpg"
@@ -172,7 +172,7 @@
             </div>
             <div class="plot__content">
               <picture>
-                <source srcset="img/plot/truck.webp" type="image/webp" />
+                <source srcset="./img/plot/truck.webp" type="image/webp" />
                 <img
                   class="plot__img"
                   src="./img/plot/truck.jpg"
@@ -197,7 +197,7 @@
             <div class="plot__content plot__content--side">
               <picture>
                 <source
-                  srcset="img/plot/t-800_sarah_john.webp"
+                  srcset="./img/plot/t-800_sarah_john.webp"
                   type="image/webp"
                 />
                 <img
@@ -230,7 +230,7 @@
             </div>
             <div class="plot__content">
               <picture>
-                <source srcset="img/plot/cyberdyne.webp" type="image/webp" />
+                <source srcset="./img/plot/cyberdyne.webp" type="image/webp" />
                 <img
                   class="plot__img"
                   src="./img/plot/cyberdyne.png"
@@ -266,7 +266,7 @@
             <div class="plot__content plot__content--side">
               <picture>
                 <source
-                  srcset="img/plot/john-and-terminators.webp"
+                  srcset="./img/plot/john-and-terminators.webp"
                   type="image/webp"
                 />
                 <img
@@ -274,8 +274,8 @@
                   src="./img/plot/john-and-terminators.jpg"
                   alt="Джон с терминатором смолтрят на жидкий метал"
                   loading="lazy"
-                  width="1500"
-                  height="1008"
+                  width="1200"
+                  height="675"
                 />
               </picture>
               <p class="section-text plot__text">
@@ -317,7 +317,7 @@
             </p>
             <div class="terminators__tabs" role="tablist">
               <button
-                class="terminator__tab btn-reset"
+                class="terminators__tab btn-reset"
                 id="t-800"
                 data-tab-t-800
                 role="tab"
@@ -327,7 +327,7 @@
                 T-800 / Model 101
               </button>
               <button
-                class="terminator__tab btn-reset"
+                class="terminators__tab btn-reset"
                 id="t-1000"
                 data-tab-t-1000
                 role="tab"
@@ -341,7 +341,7 @@
 
             <div class="terminators__block">
               <div
-                class="terminator__info terminator__info--t800 is-active"
+                class="terminators__info terminators__info--t800 is-active"
                 id="panel-t800"
                 role="tabpanel"
                 aria-labelledby="t-800"
@@ -349,11 +349,11 @@
                 aria-hidden="false"
               >
                 <div class="spec spec--t800">
-                  <h4 class="spec__title">Тип</h4>
+                  <h3 class="spec__title">Тип</h3>
                   <ul class="spec__list list-reset">
                     <li class="spec__item">Инфильтрационный киборг</li>
                   </ul>
-                  <h4 class="spec__title">Назначение</h4>
+                  <h3 class="spec__title">Назначение</h3>
                   <ul class="spec__list list-reset">
                     <li class="spec__item">Устранение целей</li>
                     <li class="spec__item">Защита приоритетных объектов</li>
@@ -361,7 +361,7 @@
                       Проникновение в человеческую среду
                     </li>
                   </ul>
-                  <h4 class="spec__title">Конструкция</h4>
+                  <h3 class="spec__title">Конструкция</h3>
                   <ul class="spec__list list-reset">
                     <li class="spec__item">
                       <strong>Эндоскелет:</strong> Титан-танталовый сплав
@@ -381,7 +381,7 @@
                       — разблокирована)
                     </li>
                   </ul>
-                  <h4 class="spec__title">Физические характеристики</h4>
+                  <h3 class="spec__title">Физические характеристики</h3>
                   <ul class="spec__list list-reset">
                     <li class="spec__item">
                       <strong>Сила:</strong> значительно превосходит человека
@@ -398,7 +398,7 @@
                     </li>
                   </ul>
 
-                  <h4 class="spec__title">Вооружение</h4>
+                  <h3 class="spec__title">Вооружение</h3>
                   <ul class="spec__list list-reset">
                     <li class="spec__item">
                       Использует любое доступное оружие
@@ -412,7 +412,7 @@
                     </li>
                   </ul>
 
-                  <h4 class="spec__title">Поведенческие особенности</h4>
+                  <h3 class="spec__title">Поведенческие особенности</h3>
                   <ul class="spec__list list-reset">
                     <li class="spec__item">Холодная логика</li>
                     <li class="spec__item">Отсутствие эмоций (изначально)</li>
@@ -425,7 +425,7 @@
                     </li>
                   </ul>
 
-                  <h4 class="spec__title">Статус в фильме</h4>
+                  <h3 class="spec__title">Статус в фильме</h3>
                   <ul class="spec__list list-reset">
                     <li class="spec__item">
                       Перепрограммирован для защиты Джона Коннора
@@ -435,14 +435,14 @@
                     </li>
                   </ul>
                 </div>
-                <div class="terminator__images">
+                <div class="terminators__images">
                   <picture>
                     <source
                       srcset="./img/terminators/t-800.webp"
                       type="image/webp"
                     />
                     <img
-                      class="terminator__unit terminator__unit--left"
+                      class="terminators__unit terminators__unit--left"
                       src="./img/terminators/t-800.png"
                       alt="Терминатор Т-800"
                     />
@@ -451,7 +451,7 @@
               </div>
 
               <div
-                class="terminator__info terminator__info--t1000"
+                class="terminators__info terminators__info--t1000"
                 data-t-1000
                 id="panel-t1000"
                 role="tabpanel"
@@ -459,14 +459,14 @@
                 aria-hidden="true"
               >
                 <div class="spec spec--t1000">
-                  <h4 class="spec__title">Тип</h4>
+                  <h3 class="spec__title">Тип</h3>
                   <ul class="spec__list list-reset">
                     <li class="spec__item">
                       Экспериментальный терминатор нового поколения
                       (мимикрирующий полисплав — жидкий металл)
                     </li>
                   </ul>
-                  <h4 class="spec__title">Назначение</h4>
+                  <h3 class="spec__title">Назначение</h3>
                   <ul class="spec__list list-reset">
                     <li class="spec__item">Устранение приоритетных целей</li>
                     <li class="spec__item">
@@ -477,7 +477,7 @@
                       тканью
                     </li>
                   </ul>
-                  <h4 class="spec__title">Конструкция</h4>
+                  <h3 class="spec__title">Конструкция</h3>
                   <ul class="spec__list list-reset">
                     <li class="spec__item">
                       Материал корпуса: мимикрирующий полисплав (жидкий металл)
@@ -502,7 +502,7 @@
                       <strong>Система обучения:</strong> продвинутая, автономная
                     </li>
                   </ul>
-                  <h4 class="spec__title">Физические характеристики</h4>
+                  <h3 class="spec__title">Физические характеристики</h3>
                   <ul class="spec__list list-reset">
                     <li class="spec__item">
                       <strong>Сила:</strong> превосходит T-800 в ближнем бою
@@ -520,7 +520,7 @@
                     </li>
                   </ul>
 
-                  <h4 class="spec__title">Вооружение</h4>
+                  <h3 class="spec__title">Вооружение</h3>
                   <ul class="spec__list list-reset">
                     <li class="spec__item">
                       Формирует холодное оружие из собственного тела (клинки,
@@ -534,7 +534,7 @@
                     </li>
                   </ul>
 
-                  <h4 class="spec__title">Поведенческие особенности</h4>
+                  <h3 class="spec__title">Поведенческие особенности</h3>
                   <ul class="spec__list list-reset">
                     <li class="spec__item">Абсолютно холодный расчёт</li>
                     <li class="spec__item">
@@ -549,14 +549,14 @@
                     </li>
                   </ul>
 
-                  <h4 class="spec__title">Статус в фильме</h4>
+                  <h3 class="spec__title">Статус в фильме</h3>
                   <ul class="spec__list list-reset">
                     <li class="spec__item">Основной антагонист</li>
                     <li class="spec__item">Не подлежит перепрограммированию</li>
                     <li class="spec__item">Уничтожен в расплавленной стали</li>
                   </ul>
                 </div>
-                <div class="terminator__images">
+                <div class="terminators__images">
                   <picture>
                     <source
                       srcset="./img/terminators/t-1000.webp"
@@ -564,7 +564,7 @@
                     />
 
                     <img
-                      class="terminator__unit terminator__unit--right"
+                      class="terminators__unit terminators__unit--right"
                       src="./img/terminators/t-1000.png"
                       alt="Терминатор Т-1000"
                     />
@@ -577,7 +577,6 @@
         <section class="about section-offset" id="about" data-about-section>
           <div class="container about__container">
             <h2 class="section-title about__title">О фильме</h2>
-            <h3 class="about__subtitle">Skynet - Terminator 2</h3>
             <div class="about-data">
               <span class="about-data__load"></span>
 
@@ -794,7 +793,6 @@
                     <audio
                       class="soundtrack__song"
                       src="./music/Brad_Fiedel_-_main_theme.mp3"
-                      type="audio/mpeg"
                     ></audio>
                     <div class="soundtrack__controls">
                       <button
@@ -881,7 +879,6 @@
                     <audio
                       class="soundtrack__song"
                       src="./music/Dwight_Yoakam_-_Guitars_Cadillacs.mp3"
-                      type="audio/mpeg"
                     ></audio>
                     <div class="soundtrack__controls">
                       <button
@@ -968,7 +965,6 @@
                     <audio
                       class="soundtrack__song"
                       src="./music/George_Thorogood_-_Bad_To_The_Bone.mp3"
-                      type="audio/mpeg"
                     ></audio>
                     <div class="soundtrack__controls">
                       <button
@@ -1055,7 +1051,6 @@
                     <audio
                       class="soundtrack__song"
                       src="./music/Guns_N_Roses_-_You_Could_Be_Mine.mp3"
-                      type="audio/mpeg"
                     ></audio>
                     <div class="soundtrack__controls">
                       <button
@@ -1140,8 +1135,7 @@
                   <div class="soundtrack__player">
                     <audio
                       class="soundtrack__song"
-                      src="./music/Sarah Connor's Dream.mp3"
-                      type="audio/mpeg"
+                      src="./music/Sarah_Connor's_Dream.mp3"
                     ></audio>
                     <div class="soundtrack__controls">
                       <button
@@ -1228,7 +1222,6 @@
                     <audio
                       class="soundtrack__song"
                       src="./music/Brad_Fiedel_-_Its_over_goodbye.mp3"
-                      type="audio/mpeg"
                     ></audio>
                     <div class="soundtrack__controls">
                       <button
@@ -1296,7 +1289,7 @@
           <div class="container cast__container">
             <h2 class="cast__title section-title">Актёры</h2>
             <div class="cast__actors">
-              <div class="swiper swiper-cast">
+              <div class="swiper swiper-cast cast__inner">
                 <div class="swiper-wrapper"></div>
               </div>
               <div class="swiper-scrollbar swiper-cast-scrollbar"></div>
@@ -1531,8 +1524,8 @@
           </p>
         </div>
       </footer>
-      <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
-      <script src="./js/script.js" type="module" defer></script>
+      <script src="js/vendor/swiper-bundle.min.js"></script>
+      <script src="./js/script.js" type="module"></script>
     </div>
   </body>
 </html>

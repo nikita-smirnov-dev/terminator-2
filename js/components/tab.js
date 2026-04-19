@@ -1,4 +1,4 @@
-export const initTabs = () => {
+const initTabs = () => {
   const container = document.querySelector('[data-terminators-container]');
 
   if (!container) return;

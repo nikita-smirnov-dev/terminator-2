@@ -1,4 +1,4 @@
-export const initAboutAnimation = () => {
+const initAboutAnimation = () => {
   const aboutSection = document.querySelector('[data-about-section]');
 
   const groups = [

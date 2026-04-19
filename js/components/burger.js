@@ -1,4 +1,4 @@
-export const initBurger = () => {
+const initBurger = () => {
   const burger = document.querySelector('[data-burger]');
   const nav = document.querySelector('[data-nav]');
 

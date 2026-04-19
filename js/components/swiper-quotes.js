@@ -1,8 +1,8 @@
-import quotes from '../data/quotes.js';
+import quotes from '../../data/quotes.js';
 
-export const initQuotesSlider = () => {
+const initQuotesSlider = () => {
   const swiperContainer = document.querySelector(
-    '.swiper-hero .swiper-wrapper',
+    '.hero__content .hero__wrapper',
   );
 
   if (!swiperContainer) return;
@@ -11,20 +11,20 @@ export const initQuotesSlider = () => {
     for (let item of quotes) {
       const slide = document.createElement('div');
 
-      slide.className = 'swiper-slide-hero swiper-slide ';
+      slide.className = 'swiper-slide hero__card';
 
       slide.innerHTML = `
-      <div class="hero-bg-wrapper">
+      <div class='hero__bg-wrapper'>
           <picture>
-         <source srcset="${item.srcset}" type="${item.type}">
-          <img src="${item.src}" alt="" aria-hidden="true">
+         <source srcset='${item.srcset}' type='image/webp'>
+          <img src='${item.src}' alt='' aria-hidden='true'>
          </picture>
          </div>
       <picture>
-        <source srcset="${item.srcset}" type="${item.type}">
-        <img src="${item.src}" alt="${item.title}">
+        <source srcset='${item.srcset}' type='image/webp'>
+        <img src='${item.src}' alt='${item.title}'>
       </picture>
-      <p class='swiper-text'>${item.text}</p>
+      <p class='hero__text'>${item.text}</p>
       `;
       swiperContainer.append(slide);
     }
@@ -32,7 +32,7 @@ export const initQuotesSlider = () => {
 
   renderSliderQuotes();
 
-  const swiper = new Swiper('.swiper-hero', {
+  const swiper = new Swiper('.hero__content', {
     slidesPerView: 1,
     loop: true,
     speed: 2500,
