@@ -159,12 +159,20 @@
     transform: translateX(-100%) translateY(0) scaleY(1);
   }
 
-  .cast__wrapper {
+  .crew__wrapper {
     display: flex;
     flex-direction: column;
   }
 
-  .cast__content {
+  .cast-slide-hint {
+    width: 15%;
+  }
+
+  .cast-card {
+    width: 20%;
+  }
+
+  .crew__content {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
@@ -172,14 +180,14 @@
     width: 100%;
   }
 
-  .cast__text {
+  .crew__subtitle {
     display: flex;
     align-items: flex-end;
     white-space: nowrap;
     width: 100%;
   }
 
-  .cast__text::after {
+  .crew__subtitle::after {
     content: '';
     width: 100%;
     height: 1px;
@@ -188,7 +196,7 @@
     margin: 0 10px;
   }
 
-  .cast__list {
+  .crew__list {
     flex: 0 0 20%;
     text-align: left;
   }
@@ -393,7 +401,18 @@
     justify-content: flex-start;
   }
 
-  .cast__wrapper {
+  .cast-slide-hint {
+    width: 20%;
+  }
+
+  .cast-card {
+    width: 25%;
+  }
+  .crew__block {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .crew__wrapper {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -402,30 +421,30 @@
     gap: var(--spacing-30);
   }
 
-  .cast__content {
+  .crew__content {
     display: inline-block;
     flex-basis: calc(50% - var(--spacing-20));
     padding: 0;
     text-align: center;
   }
 
-  .cast__content--operator {
+  .crew__content--operator {
     order: -1;
   }
 
-  .cast__content--composer {
+  .crew__content--composer {
     order: -1;
   }
 
-  .cast__text {
+  .crew__subtitle {
     display: inline-block;
   }
 
-  .cast__text::after {
+  .crew__subtitle::after {
     content: none;
   }
 
-  .cast__list {
+  .crew__list {
     text-align: center;
   }
 }
@@ -579,6 +598,13 @@
     align-items: flex-start;
   }
 
+  .about-data__wrapper,
+  .about-budget__wrapper,
+  .about-awards__wrapper,
+  .about-impact__wrapper {
+    flex-direction: column;
+  }
+
   .about-data__value,
   .about-budget__value,
   .about-awards__value,
@@ -620,10 +646,6 @@
 
   .soundtrack {
     padding: var(--spacing-12) var(--spacing-10);
-  }
-
-  .soundtrack:hover {
-    box-shadow: none;
   }
 
   .soundtrack__descr {
@@ -681,8 +703,19 @@
     margin-bottom: var(--spacing-20);
   }
 
-  .cast__actors {
-    margin-bottom: var(--spacing-80);
+  .cast-card {
+    width: 30%;
+  }
+
+  .drag-indicator__arrow {
+    width: 20px;
+    height: 20px;
+    border-top-width: 2px;
+    border-right-width: 2px;
+  }
+
+  .drag-indicator__text {
+    font-size: 18px;
   }
 
   .cast-card__info {
@@ -698,21 +731,20 @@
     font-size: var(--font-size-12);
   }
 
-  .cast__subtitle {
+  .crew__title {
     margin-bottom: var(--spacing-20);
-    font-size: var(--font-size-20);
   }
 
-  .cast__block {
+  .crew__block {
     grid-template-rows: none;
     grid-template-columns: 1fr;
   }
 
-  .cast__text {
+  .crew__subtitle {
     font-size: var(--font-size-14);
   }
 
-  .cast__item {
+  .crew__item {
     font-size: var(--font-size-16);
     line-height: 1.5;
   }

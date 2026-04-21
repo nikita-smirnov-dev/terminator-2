@@ -1,9 +1,7 @@
 import actors from '../../data/actors.js';
 
 const initActorsSlider = () => {
-  const swiperContainer = document.querySelector(
-    '.swiper-cast .swiper-wrapper',
-  );
+  const swiperContainer = document.querySelector('.cast__wrapper');
 
   if (!swiperContainer) return;
 
@@ -40,29 +38,17 @@ const initActorsSlider = () => {
   renderActors();
 
   const swiperCast = new Swiper('.swiper-cast', {
-    slidesPerView: 2.5,
-    spaceBetween: 16,
+    slidesPerView: 'auto',
+    spaceBetween: 30,
+    grabCursor: true,
+    slidesOffsetBefore: 0,
+    slidesOffsetAfter: 80,
+    touchRatio: 5,
+    resistanceRatio: 0.1,
 
     breakpoints: {
-      480: {
-        slidesPerView: 3.5,
-        spaceBetween: 20,
-      },
-
-      768: {
-        slidesPerView: 4.5,
-        spaceBetween: 24,
-      },
-
-      1024: {
-        slidesPerView: 5.5,
-        spaceBetween: 32,
-      },
-
-      1280: {
-        slidesPerView: 6,
-        spaceBetween: 40,
-      },
+      320: { spaceBetween: 16 },
+      768: { spaceBetween: 30 },
     },
 
     a11y: {
@@ -72,17 +58,6 @@ const initActorsSlider = () => {
       notificationClass: 'swiper-notification',
       containerMessage: 'Список актеров фильма',
       itemRoleDescriptionMessage: null,
-    },
-
-    keyboard: {
-      enabled: true,
-      onlyInViewport: true,
-      pageUpDown: true,
-    },
-
-    scrollbar: {
-      el: '.swiper-cast-scrollbar',
-      draggable: true,
     },
   });
 };
