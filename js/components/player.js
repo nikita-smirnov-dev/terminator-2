@@ -19,6 +19,12 @@ const initPlayer = () => {
     );
     const progress = currentItem.querySelector('.soundtrack__progress-bar');
     const timeline = currentItem.querySelector('.soundtrack__timeline');
+    const volumeContainer = currentItem.querySelector('.soundtrack__volume');
+    const volumeBtn = currentItem.querySelector('.soundtrack__volume-btn');
+    const volumeInput = currentItem.querySelector('.soundtrack__volume-input');
+
+    currentAudio.volume = 0.5;
+    volumeInput.value = 0.5;
 
     currentAudio.addEventListener('loadedmetadata', () => {
       if (currentAudio.duration) {
@@ -71,6 +77,50 @@ const initPlayer = () => {
       currentAudio.currentTime = (clickX / width) * duration;
     });
 
+    let lastVolume = 0.5;
+
+    volumeBtn.addEventListener('click', () => {
+      if (currentAudio.volume > 0) {
+        lastVolume = currentAudio.volume;
+        currentAudio.volume = 0;
+        volumeInput.value = 0;
+        volumeBtn.classList.add('is-volume');
+        volumeBtn.setAttribute('aria-label', 'Включить звук');
+      } else {
+        currentAudio.volume = lastVolume > 0 ? lastVolume : 0.5;
+        volumeInput.value = currentAudio.volume;
+        volumeBtn.classList.remove('is-volume');
+        volumeBtn.setAttribute('aria-label', 'Выключить звук');
+      }
+    });
+
+    volumeInput.addEventListener('input', () => {
+      const value = volumeInput.value;
+      currentAudio.volume = value;
+
+      volumeInput.setAttribute('aria-valuenow', Math.round(value * 100));
+
+      if (value == 0) {
+        volumeBtn.classList.add('is-volume');
+      } else {
+        volumeBtn.classList.remove('is-volume');
+      }
+    });
+
+    volumeBtn.addEventListener('focus', () => {
+      volumeBtn.setAttribute('aria-expanded', 'true');
+    });
+
+    volumeInput.addEventListener('focus', () => {
+      volumeBtn.setAttribute('aria-expanded', 'true');
+    });
+
+    volumeContainer.addEventListener('focusout', (e) => {
+      if (!volumeContainer.contains(e.relatedTarget)) {
+        volumeBtn.setAttribute('aria-expanded', 'false');
+      }
+    });
+
     item.addEventListener('click', () => {
       if (currentItem.classList.contains('is-playing')) {
         currentItem.classList.remove('is-playing');
@@ -88,8 +138,7 @@ const initPlayer = () => {
           const timeline = el.querySelector('.soundtrack__timeline');
 
           if (audio) audio.pause();
-          if (progress) progress.style.width = '0%';
-          timeline.textContent = formatTime(audio.duration);
+          audio.currentTime = 0;
           btn.setAttribute('aria-label', 'Воспроизвести саундтрек');
         });
         currentItem.classList.add('is-playing');

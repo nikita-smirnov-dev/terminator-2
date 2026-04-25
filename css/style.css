@@ -939,6 +939,115 @@ section {
   color: var(--color-text-info);
 }
 
+.soundtrack__volume {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.soundtrack__volume::before {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  width: 100%;
+  height: 40%;
+}
+
+.soundtrack__volume-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+}
+
+.soundtrack__volume-icon {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  stroke: rgba(255, 60, 47, 0.6);
+  fill: transparent;
+  transition:
+    opacity 0.2s ease-in-out,
+    stroke 0.3s ease-in-out;
+}
+
+.icon-volume {
+  opacity: 1;
+}
+
+.icon-mute {
+  opacity: 0;
+}
+
+.is-volume .icon-volume {
+  opacity: 0;
+}
+
+.is-volume .icon-mute {
+  opacity: 1;
+}
+
+.soundtrack__volume-slider-wrapper {
+  position: absolute;
+  bottom: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 130px;
+  background: #1a1a1a;
+  padding: 10px;
+  border: 1px solid #ff0000;
+  border-radius: 4px;
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    opacity 0.3s ease,
+    bottom 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.soundtrack__volume:focus-within .soundtrack__volume-slider-wrapper,
+.soundtrack__volume:hover .soundtrack__volume-slider-wrapper {
+  opacity: 1;
+  pointer-events: all;
+  bottom: 140%;
+}
+
+.soundtrack__volume-input {
+  -webkit-appearance: none;
+  appearance: none;
+  position: absolute;
+  width: 100px;
+  height: 4px;
+  background: #300000;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-90deg);
+  cursor: pointer;
+  outline: none;
+}
+
+.soundtrack__volume-input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 8px;
+  height: 20px;
+  background: var(--color-accent);
+  border-radius: 0;
+  box-shadow: 0 0 8px var(--color-accent);
+}
+
+.soundtrack__volume-input:focus-visible {
+  outline: 2px solid #b71c1c;
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
 .tooltip-wrapper {
   position: absolute;
   left: 40%;
