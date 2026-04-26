@@ -218,13 +218,86 @@ section {
   display: none;
 }
 
+/* banner
+============================================ */
+.anniversary-banner {
+  padding-top: calc(var(--header-height) + var(--spacing-50));
+  padding-bottom: var(--spacing-20);
+}
+
+.anniversary-banner__wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  min-height: 250px;
+  padding: 15px;
+  color: var(--color-text);
+  background-image: url('../img/banner/banner.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right center;
+  letter-spacing: 0.04em;
+}
+
+.anniversary-banner__wrapper::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+}
+
+.anniversary-banner__content {
+  position: relative;
+  text-align: left;
+  z-index: 2;
+}
+
+.anniversary-banner__title {
+  display: inline-block;
+  margin-bottom: var(--spacing-20);
+  font-size: var(--font-size-20);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-spec-item);
+}
+
+.anniversary-banner__text {
+  margin: 0;
+  margin-bottom: var(--spacing-20);
+  color: var(--color-spec-item);
+}
+
+.accent {
+  color: var(--color-accent);
+}
+
+.anniversary-banner__info {
+  margin: 0;
+  margin-bottom: var(--spacing-20);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-spec-item);
+}
+
+.anniversary-banner__timer {
+  font-family: 'Courier New', Courier, monospace;
+  color: var(--color-accent);
+  font-size: var(--font-size-20);
+  text-shadow:
+    0 0 5px rgba(255, 0, 0, 0.3),
+    0 0 5px rgba(255, 0, 0, 0.4);
+}
+
 /* hero
 ============================================ */
 
-.hero__container {
+/* .hero__container {
   padding-top: calc(var(--header-height) + var(--spacing-80));
   padding-bottom: var(--spacing-50);
-}
+} */
 
 .hero__title {
   margin: 0;

@@ -1,5 +1,6 @@
 import './components/header-height.js';
 import './components/back-to-top.js';
+import './components/banner.js';
 import './components/burger.js';
 import './components/swiper-quotes.js';
 import './components/swiper-actors.js';

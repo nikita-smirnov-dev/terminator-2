@@ -26,7 +26,6 @@
       sizes="16x16"
       href="./img/favicon/favicon-16x16.png"
     />
-    <link rel="preload" as="image" href="img/slider/T-800.webp" />
     <link rel="stylesheet" href="css/fonts.css" />
     <link rel="stylesheet" href="css/vendor/swiper-bundle.min.css" />
     <link rel="stylesheet" href="css/normalize.css" />
@@ -104,7 +103,25 @@
         </div>
       </header>
       <main class="main">
-        <section class="hero">
+        <section class="anniversary-banner">
+          <div class="container anniversary-banner__wrapper">
+            <div class="anniversary-banner__content">
+              <span class="anniversary-banner__title"
+                >SYSTEM STATUS: Приближается годовщина</span
+              >
+              <p class="anniversary-banner__text">
+                3 июля 2026 года исполняется
+                <span class="accent">35 лет</span> со дня выхода "Terminator 2:
+                Judgment Day".
+              </p>
+              <p class="anniversary-banner__info">
+                До юбилея легенды осталось:
+              </p>
+              <div class="anniversary-banner__timer" data-countdown></div>
+            </div>
+          </div>
+        </section>
+        <section class="hero section-offset">
           <div class="container hero__container">
             <h1 class="hero__title">Terminator 2: Judgment Day</h1>
             <div class="swiper hero__content">
