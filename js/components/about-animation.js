@@ -29,8 +29,8 @@ const initAboutAnimation = () => {
 
   let hasAnimated = false;
 
-  const isMobile = window.innerWidth <= 768;
-  const triggerThreshold = isMobile ? 0.2 : 0.5;
+  // const isMobile = window.innerWidth <= 768;
+  // const triggerThreshold = isMobile ? 0.2 : 0.5;
 
   const observer = new IntersectionObserver(
     (entries, observer) => {
@@ -73,7 +73,7 @@ const initAboutAnimation = () => {
       });
     },
     {
-      threshold: triggerThreshold,
+      threshold: 0.2,
     },
   );
 

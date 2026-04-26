@@ -92,6 +92,58 @@ section {
   overflow: clip;
 }
 
+.back-to-top {
+  position: fixed;
+  right: var(--spacing-40);
+  bottom: var(--spacing-40);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--color-player-btn);
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.3s ease-in-out,
+    visibility 0.3s ease-in-out,
+    background-color 0.3s ease-in-out;
+}
+
+.back-to-top::after {
+  content: '';
+  position: relative;
+  top: 3px;
+  width: 14px;
+  height: 14px;
+  border-top: 2px solid var(--color-spec-arrow);
+  border-right: 2px solid var(--color-spec-arrow);
+  transform: rotate(-45deg);
+  filter: drop-shadow(0 0 5px var(--color-spec-arrow));
+  transition: border-color 0.3s ease-in-out;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .back-to-top:hover {
+    background-color: var(--color-hover);
+  }
+
+  .back-to-top:hover::after {
+    border-color: var(--color-black);
+  }
+}
+
+.back-to-top:active {
+  background-color: var(--color-accent);
+}
+
+.back-to-top--visible {
+  opacity: 1;
+  visibility: visible;
+}
+
 /* header
 ============================================ */
 
@@ -675,25 +727,12 @@ section {
     transform 0.4s ease;
 }
 
-.about-data__wrapper,
-.about-budget__wrapper,
-.about-awards__wrapper,
-.about-impact__wrapper {
-  display: flex;
-  align-items: flex-start;
-  width: 100%;
-}
-
 .about-data__text,
 .about-budget__text,
 .about-awards__text,
 .about-impact__text {
   color: var(--color-text-info);
   font-size: var(--spacing-14);
-}
-
-.about-data__text::after {
-  content: ':';
 }
 
 .about-data__dots,
@@ -1117,8 +1156,8 @@ section {
   z-index: 10;
 }
 
-.popup strong {
-  display: inline-block;
+.popup b {
+  display: block;
   margin-bottom: var(--spacing-10);
 }
 
@@ -1277,6 +1316,19 @@ section {
 .crew__pic {
   width: 100%;
   height: 100%;
+}
+
+.crew__pic a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  line-height: 0;
+}
+
+.crew__pic a:focus-visible {
+  outline: 2px solid #b71c1c;
+  outline-offset: 4px;
+  border-radius: 2px;
 }
 
 .crew__img {

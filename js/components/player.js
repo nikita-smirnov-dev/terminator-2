@@ -22,17 +22,20 @@ const initPlayer = () => {
     const volumeContainer = currentItem.querySelector('.soundtrack__volume');
     const volumeBtn = currentItem.querySelector('.soundtrack__volume-btn');
     const volumeInput = currentItem.querySelector('.soundtrack__volume-input');
-
     currentAudio.volume = 0.5;
     volumeInput.value = 0.5;
 
-    currentAudio.addEventListener('loadedmetadata', () => {
-      if (currentAudio.duration) {
+    const setInitialDuration = () => {
+      if (currentAudio.duration && !isNaN(currentAudio.duration)) {
         timeline.textContent = formatTime(currentAudio.duration);
       } else {
         timeline.textContent = '0:00';
       }
-    });
+    };
+
+    setInitialDuration();
+
+    currentAudio.addEventListener('loadedmetadata', setInitialDuration);
 
     currentAudio.addEventListener('timeupdate', () => {
       if (!currentAudio.duration) return;
@@ -46,7 +49,9 @@ const initPlayer = () => {
 
       progress.style.width = `${progressPercent}%`;
 
-      timeline.textContent = formatTime(currentAudio.currentTime);
+      if (!currentAudio.paused) {
+        timeline.textContent = formatTime(currentAudio.currentTime);
+      }
     });
 
     progressContainer.addEventListener('keydown', (e) => {
@@ -139,6 +144,7 @@ const initPlayer = () => {
 
           if (audio) audio.pause();
           audio.currentTime = 0;
+          timeline.textContent = formatTime(audio.duration);
           btn.setAttribute('aria-label', 'Воспроизвести саундтрек');
         });
         currentItem.classList.add('is-playing');

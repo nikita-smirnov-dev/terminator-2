@@ -11,7 +11,6 @@ const initActorsSlider = () => {
       const defaultImg = 'img/cast/default.svg';
 
       slide.className = 'swiper-slide cast-card';
-      slide.setAttribute('tabindex', '0');
 
       slide.innerHTML = `
           <picture>
@@ -51,12 +50,19 @@ const initActorsSlider = () => {
       768: { spaceBetween: 30 },
     },
 
+    keyboard: {
+      enabled: true,
+      onlyInViewport: true,
+      pageUpDown: true,
+    },
+
     a11y: {
       enabled: true,
       prevSlideMessage: 'Предыдущий слайд',
       nextSlideMessage: 'Следующий слайд',
       notificationClass: 'swiper-notification',
-      containerMessage: 'Список актеров фильма',
+      containerMessage:
+        'Список актеров фильма. Используйте стрелки для прокрутки',
       itemRoleDescriptionMessage: null,
     },
   });
