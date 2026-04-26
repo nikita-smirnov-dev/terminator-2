@@ -130,6 +130,7 @@ const initPlayer = () => {
       if (currentItem.classList.contains('is-playing')) {
         currentItem.classList.remove('is-playing');
         currentAudio.pause();
+        timeline.textContent = formatTime(currentAudio.duration);
         item.setAttribute('aria-label', 'Воспроизвести саундтрек');
       } else {
         document.querySelectorAll('.soundtrack__player').forEach((el) => {
