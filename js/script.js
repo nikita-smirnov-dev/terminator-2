@@ -8,3 +8,4 @@ import './components/tab.js';
 import './components/about-animation.js';
 import './components/player.js';
 import './components/current-year.js';
+import './components/archives.js';
