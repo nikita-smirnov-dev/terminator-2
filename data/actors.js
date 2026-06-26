@@ -6,8 +6,8 @@ const actors = [
     role: 'терминатор Т-800',
   },
   {
-    src: 'img/cast/Linda_Hamilton.webp',
-    srcset: 'img/cast/Linda_Hamilton.jpg',
+    src: 'img/cast/Linda_Hamilton.jpg',
+    srcset: 'img/cast/Linda_Hamilton.webp',
     actor: 'Линда Хэмилтон',
     role: 'Сара Коннор',
   },

@@ -148,6 +148,15 @@
     right: 0;
   }
 
+  .archives__inner {
+    gap: var(--spacing-50) 20px;
+    padding: var(--spacing-20) 0;
+  }
+
+  .archives__card {
+    width: 45%;
+  }
+
   .soundtrack__btn:hover {
     background-color: var(--color-player-btn);
     transform: translateY(-2px);
@@ -405,6 +414,52 @@
   .about-impact__value {
     flex: 0 0 240px;
     text-align: right;
+  }
+
+  .archives__card {
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    gap: 15px;
+  }
+
+  .archives__card:hover {
+    height: auto;
+    box-shadow: 0 2px 40px rgba(255, 0, 0, 0.3);
+  }
+
+  .archives__img-box {
+    position: relative;
+    top: 0;
+    width: 100%;
+    height: 250px;
+    transform: none;
+  }
+
+  .archives__card:hover .archives__img-box {
+    transform: none;
+    top: 0;
+    box-shadow: none;
+  }
+
+  .archives__content {
+    position: relative;
+    top: 0;
+    width: 100%;
+    height: auto;
+    padding: 0;
+    text-align: center;
+  }
+
+  .archives__card:hover .archives__content {
+    top: 0;
+    height: auto;
+  }
+
+  .archives__text {
+    margin-top: 10px;
   }
 
   .soundtrack {
@@ -673,6 +728,10 @@
   .about-awards__dots::after,
   .about-impact__dots::after {
     content: none;
+  }
+
+  .archives__text {
+    font-size: 1rem;
   }
 
   .soundtracks__title {
