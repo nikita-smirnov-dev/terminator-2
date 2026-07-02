@@ -2,7 +2,6 @@ const initBanner = () => {
   const timerElement = document.querySelector('[data-countdown]');
 
   const targetDate = new Date('July 3, 2026 00:00:00').getTime();
-  console.log(targetDate);
 
   const declension = (value, words) => {
     const num = Math.abs(value) % 100;
