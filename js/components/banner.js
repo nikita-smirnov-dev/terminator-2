@@ -2,6 +2,7 @@ const initBanner = () => {
   const timerElement = document.querySelector('[data-countdown]');
 
   const targetDate = new Date('July 3, 2026 00:00:00').getTime();
+  console.log(targetDate);
 
   const declension = (value, words) => {
     const num = Math.abs(value) % 100;
@@ -15,11 +16,6 @@ const initBanner = () => {
   const updateTimer = () => {
     const now = new Date().getTime();
     const distance = targetDate - now;
-
-    if (distance < 0) {
-      timerElement.textContent = `"Terminator 2:
-                Judgment Day": 35 ЛЕТ ЛЕГЕНДЕ!`;
-    }
 
     const days = Math.floor(distance / (1000 * 60 * 60 * 24));
     const hours = Math.floor(
@@ -35,6 +31,11 @@ const initBanner = () => {
       const s = declension(seconds, ['секунда', 'секунды', 'секунд']);
 
       timerElement.textContent = `${days} ${d} ${hours.toString().padStart(2, '0')} ${h} ${minutes.toString().padStart(2, '0')} ${m} ${seconds.toString().padStart(2, '0')} ${s}`;
+    }
+
+    if (distance < 0) {
+      timerElement.textContent = `"Terminator 2:
+                Judgment Day": 35 ЛЕТ ЛЕГЕНДЕ!`;
     }
   };
 
