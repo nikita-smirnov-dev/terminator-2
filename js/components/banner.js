@@ -1,7 +1,9 @@
 const initBanner = () => {
   const timerElement = document.querySelector('[data-countdown]');
+  const statusTitle = document.querySelector('[data-status-title]');
+  const statusSub = document.querySelector('[data-status-sub]');
 
-  const targetDate = new Date('July 3, 2026 00:00:00').getTime();
+  const targetDate = new Date('2026-08-29T02:14:00+03:00').getTime();
 
   const declension = (value, words) => {
     const num = Math.abs(value) % 100;
@@ -33,8 +35,9 @@ const initBanner = () => {
     }
 
     if (distance < 0) {
-      timerElement.textContent = `"Terminator 2:
-                Judgment Day": 35 ЛЕТ ЛЕГЕНДЕ!`;
+      statusTitle.textContent = 'SYSTEM STATUS: СУДНЫЙ ДЕНЬ НАСТАЛ';
+      statusSub.textContent = 'ИСТОЧНИК УГРОЗЫ ЛОКАЛИЗОВАН:';
+      timerElement.textContent = `Три миллиарда человеческих жизней оборвались в один миг. Выжившие назвали это Судным днем.`;
     }
   };
 
