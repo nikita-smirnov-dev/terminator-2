@@ -1,48 +1,48 @@
-const initBanner = () => {
-  const timerElement = document.querySelector('[data-countdown]');
-  const statusTitle = document.querySelector('[data-status-title]');
-  const statusSub = document.querySelector('[data-status-sub]');
+// const initBanner = () => {
+//   const timerElement = document.querySelector('[data-countdown]');
+//   const statusTitle = document.querySelector('[data-status-title]');
+//   const statusSub = document.querySelector('[data-status-sub]');
 
-  const targetDate = new Date('2026-08-29T02:14:00+03:00').getTime();
+//   const targetDate = new Date('2026-08-29T02:14:00+03:00').getTime();
 
-  const declension = (value, words) => {
-    const num = Math.abs(value) % 100;
-    const num1 = num % 10;
-    if (num > 10 && num < 20) return words[2];
-    if (num1 > 1 && num1 < 5) return words[1];
-    if (num1 === 1) return words[0];
-    return words[2];
-  };
+//   const declension = (value, words) => {
+//     const num = Math.abs(value) % 100;
+//     const num1 = num % 10;
+//     if (num > 10 && num < 20) return words[2];
+//     if (num1 > 1 && num1 < 5) return words[1];
+//     if (num1 === 1) return words[0];
+//     return words[2];
+//   };
 
-  const updateTimer = () => {
-    const now = new Date().getTime();
-    const distance = targetDate - now;
+//   const updateTimer = () => {
+//     const now = new Date().getTime();
+//     const distance = targetDate - now;
 
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor(
-      (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
-    );
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+//     const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+//     const hours = Math.floor(
+//       (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+//     );
+//     const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+//     const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-    if (timerElement) {
-      const d = declension(days, ['день', 'дня', 'дней']);
-      const h = declension(hours, ['час', 'часа', 'часов']);
-      const m = declension(minutes, ['минута', 'минуты', 'минут']);
-      const s = declension(seconds, ['секунда', 'секунды', 'секунд']);
+//     if (timerElement) {
+//       const d = declension(days, ['день', 'дня', 'дней']);
+//       const h = declension(hours, ['час', 'часа', 'часов']);
+//       const m = declension(minutes, ['минута', 'минуты', 'минут']);
+//       const s = declension(seconds, ['секунда', 'секунды', 'секунд']);
 
-      timerElement.textContent = `${days} ${d} ${hours.toString().padStart(2, '0')} ${h} ${minutes.toString().padStart(2, '0')} ${m} ${seconds.toString().padStart(2, '0')} ${s}`;
-    }
+//       timerElement.textContent = `${days} ${d} ${hours.toString().padStart(2, '0')} ${h} ${minutes.toString().padStart(2, '0')} ${m} ${seconds.toString().padStart(2, '0')} ${s}`;
+//     }
 
-    if (distance < 0) {
-      statusTitle.textContent = 'SYSTEM STATUS: СУДНЫЙ ДЕНЬ НАСТАЛ';
-      statusSub.textContent = 'ИСТОЧНИК УГРОЗЫ ЛОКАЛИЗОВАН:';
-      timerElement.textContent = `Три миллиарда человеческих жизней оборвались в один миг. Выжившие назвали это Судным днем.`;
-    }
-  };
+//     if (distance < 0) {
+//       statusTitle.textContent = 'SYSTEM STATUS: СУДНЫЙ ДЕНЬ НАСТАЛ';
+//       statusSub.textContent = 'ИСТОЧНИК УГРОЗЫ ЛОКАЛИЗОВАН:';
+//       timerElement.textContent = `Три миллиарда человеческих жизней оборвались в один миг. Выжившие назвали это Судным днем.`;
+//     }
+//   };
 
-  setInterval(updateTimer, 1000);
-  updateTimer();
-};
+//   setInterval(updateTimer, 1000);
+//   updateTimer();
+// };
 
-initBanner();
+// initBanner();
